@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper-turkish-domain-adaptation"
+version = "0.1.0"
+description = "Mock-first reproducible Turkish ASR adaptation research scaffold"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.setuptools]
+packages = ["whisper_adaptation"]
+
+[tool.ruff]
+line-length = 100

@@ -1,0 +1,4 @@
+{"id":"synthetic-001","domain":"clean_read","reference":"merhaba bugün bilgi istiyorum","baseline":"merhaba bugün bilgi istiyorum","adapter":"merhaba bugün bilgi istiyorum"}
+{"id":"synthetic-002","domain":"clean_read","reference":"genel kullanım koşulları nelerdir","baseline":"genel kullanım koşulları nelerdir","adapter":"genel kullanım koşulları nelerdir"}
+{"id":"synthetic-003","domain":"noisy_conversation","reference":"bir sorum daha var","baseline":"bir sorum var","adapter":"bir sorum daha var"}
+{"id":"synthetic-004","domain":"noisy_conversation","reference":"yardım için teşekkür ederim","baseline":"yardım için teşekkür ederim","adapter":"yardım için teşekkür ederim teşekkür ederim"}

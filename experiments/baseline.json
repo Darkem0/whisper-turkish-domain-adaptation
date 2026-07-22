@@ -1,0 +1,9 @@
+{
+  "id": "synthetic-baseline",
+  "status": "reproducible_mock",
+  "dataset": "fixtures/synthetic_eval.jsonl",
+  "prediction_field": "baseline",
+  "normalization": "turkish_basic_v1",
+  "segmentation": {"mode": "synthetic_fixed", "vad_enabled": false},
+  "notes": "Generated fixture only; replace with a public licensed manifest for a real experiment."
+}

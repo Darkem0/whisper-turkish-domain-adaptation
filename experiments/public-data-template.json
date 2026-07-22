@@ -1,0 +1,12 @@
+{
+  "id": "replace-with-public-licensed-study",
+  "status": "planned",
+  "dataset": {
+    "name": "public dataset name",
+    "license_url": "https://example.invalid/license",
+    "revision": "record immutable revision"
+  },
+  "splits": ["train", "validation", "test"],
+  "metrics": ["raw_wer", "normalized_wer", "raw_cer", "normalized_cer"],
+  "reproduction_rule": "Publish only values generated from the committed manifest and evaluation code."
+}

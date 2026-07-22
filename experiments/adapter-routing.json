@@ -1,0 +1,10 @@
+{
+  "id": "synthetic-adapter-routing",
+  "status": "reproducible_mock",
+  "dataset": "fixtures/synthetic_eval.jsonl",
+  "prediction_field": "adapter",
+  "normalization": "turkish_basic_v1",
+  "segmentation": {"mode": "synthetic_fixed", "vad_enabled": true},
+  "routing": {"clean_read": "base", "noisy_conversation": "adapter_candidate"},
+  "notes": "Synthetic comparison preserving both gains and regressions."
+}
