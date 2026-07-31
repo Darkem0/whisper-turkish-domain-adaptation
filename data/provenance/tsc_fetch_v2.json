@@ -1,0 +1,11 @@
+{
+  "dataset_id": "issai/Turkish_Speech_Corpus",
+  "remote_revision": "d79ea01392882322e8f46657cb635236af25b6d4",
+  "remote_etag": "fde426bcaca8b1ab492765cb06fc61e2c0397cce8adb7f671027cdef3cba004f",
+  "archive": "data/raw/ISSAI_TSC_218.tar.gz",
+  "archive_bytes": 21366175820,
+  "archive_sha256": "3feaba1f911542b587622d49c968bef971cfd8a4b3908d73090b8b914d2b694f",
+  "mode": "research_provisional",
+  "company_use_allowed": false,
+  "model_or_adapter_publication_allowed": false
+}

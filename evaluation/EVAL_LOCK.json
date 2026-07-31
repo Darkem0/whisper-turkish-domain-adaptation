@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "lock_status": "definition_locked_materialization_pending",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "files": {
+    "data/registry.json": "228b8c18fdb0999d7fa2095d01b81070084ce4767cf12a70ad51d202334ff7f8",
+    "evaluation/suite_v1.json": "e30cbb1596a7cb62cae20545e81312cc79e55f1fa78ace160edd1baa12ac3d0a",
+    "src/whisper_arge/evaluation.py": "a4226c1034854234fc44fa36cb419f80c612329406d21a27abfae8db4ebe9163",
+    "src/whisper_arge/manifests.py": "d27c1b319154a1ab6cbf77d020d9d6b350ac1e3ff514fddc75f870ec8c632439",
+    "src/whisper_arge/metrics.py": "c82001b039db6e07ce42640a90d14f783022fb145db28e8c4b7d7e15721250e3",
+    "src/whisper_arge/normalization.py": "d2dda80d1fdbbb49500f1d492a2754247f58982f21b99c8af9abcd189c37f9ee",
+    "src/whisper_arge/selection.py": "589397f380631918a9e53929161803a7dcdd5db2305f73b2d2102134ecc842b4"
+  },
+  "pending_before_real_experiments": [
+    "Materialized smoke, selection and full manifests",
+    "Per-audio SHA-256 values",
+    "MediaSpeech archive checksum and license snapshot",
+    "Khan Academy Turkish Math license evidence",
+    "Baseline prediction and metric hashes"
+  ],
+  "rule": "Do not edit locked files during an experiment series. A deliberate eval v2 requires a new suite and lock, never an in-place replacement."
+}

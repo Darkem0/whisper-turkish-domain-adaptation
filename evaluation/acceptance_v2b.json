@@ -1,0 +1,8 @@
+{
+  "schema_version": 2,
+  "status": "pending_baseline_calibration",
+  "suite": "evaluation/suite_v2b.json",
+  "acceptance_eligible": false,
+  "thresholds": null,
+  "rule": "Acceptance eligibility becomes true only after all four core datasets, paired MediaSpeech probes, A0 reports and bootstrap variance are materialized. Do not finalize thresholds or start LoRA training."
+}

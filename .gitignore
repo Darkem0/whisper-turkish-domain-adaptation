@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Downloaded or derived data must be reproducible from committed manifests.
+data/audio/
+data/cache/
+data/materialized/
+data/raw/
+data/index/
+
+# Editable-install metadata.
+*.egg-info/
+
+# Large and machine-specific run artifacts.
+runs/*
+!runs/README.md
+checkpoints/
+wandb/
+
+# Local orchestration state and rolling logs.
+state/
+logs/

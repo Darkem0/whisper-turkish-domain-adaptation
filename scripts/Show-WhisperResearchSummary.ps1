@@ -1,0 +1,1 @@
+$Root=Split-Path -Parent $PSScriptRoot; Get-Content (Join-Path $Root 'state\latest_status.txt') -ErrorAction Stop; Get-Content (Join-Path $Root 'state\experiment_queue.json') -Raw | ConvertFrom-Json | Select-Object id,status,error | Format-Table -AutoSize

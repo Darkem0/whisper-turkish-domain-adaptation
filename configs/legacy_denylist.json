@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "blocked_recipe_ids": [
+    "legacy_mediaspeech_only_1epoch_lora",
+    "legacy_long_audio_no_vad",
+    "legacy_balanced_phone_without_repeat_safe_decode",
+    "legacy_commonvoice_mediaspeech_mix_ckpt750",
+    "legacy_balanced_phone_from_ckpt750"
+  ],
+  "reason": "These exact conditions are legacy evidence and must not consume new compute."
+}
+

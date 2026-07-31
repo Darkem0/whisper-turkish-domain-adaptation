@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-07-30T00:00:00Z",
+  "policy": {
+    "allowed": "public, labelled Turkish speech only",
+    "forbidden": [
+      "company data",
+      "raw call data",
+      "pseudo labels",
+      "private or unlicensed audio"
+    ],
+    "materialization_rule": "A run is invalid until every consumed manifest and audio file has a SHA-256."
+  },
+  "datasets": [
+    {
+      "id": "ysdede/commonvoice_17_tr_fixed",
+      "source": "huggingface",
+      "revision": "9d8a025f1ae7c5a2f5c43298c7c4910b03995a4b",
+      "config": "default",
+      "train_split": "train",
+      "eval_split": "test",
+      "license": "cc0-1.0",
+      "domains": ["common_voice_clean"]
+    },
+    {
+      "id": "openslr/SLR108/MediaSpeech/TR",
+      "source": "https://www.openslr.org/108/",
+      "revision": "SLR108",
+      "archive_sha256": null,
+      "train_split": "train",
+      "eval_split": "test",
+      "license": "verify_from_distribution_before_materialization",
+      "domains": ["mediaspeech_clean"],
+      "blocking_note": "Archive checksum and license snapshot must be filled before any run."
+    },
+    {
+      "id": "google/fleurs",
+      "source": "huggingface",
+      "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+      "config": "tr_tr",
+      "train_split": "train",
+      "eval_split": "test",
+      "license": "cc-by-4.0",
+      "domains": ["fleurs_clean"]
+    },
+    {
+      "id": "ysdede/khanacademy-turkish",
+      "source": "huggingface",
+      "revision": "77e33a6d4a2d3ac0b5f7bf947ecab8518b1ab210",
+      "config": "default",
+      "train_split": "train",
+      "eval_split": "test",
+      "license": "cc-by-sa-3.0",
+      "domains": ["khan_clean"]
+    },
+    {
+      "id": "ysdede/khanacademy-turkish-math",
+      "source": "huggingface",
+      "revision": "e68370bd7b2304ed1c1112d863989a7cfd1125df",
+      "config": "default",
+      "train_split": "train",
+      "eval_split": "test",
+      "license": "verify_from_dataset_card_before_materialization",
+      "domains": ["khan_math_clean"],
+      "blocking_note": "Dataset card license metadata was not exposed; record evidence before use."
+    }
+  ]
+}
+

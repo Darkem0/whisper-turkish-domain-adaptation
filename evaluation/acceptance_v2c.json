@@ -1,0 +1,7 @@
+{
+  "schema_version": 2,
+  "status": "pending_baseline_calibration",
+  "acceptance_eligible": false,
+  "thresholds": null,
+  "rule": "Pending until MediaSpeech, CV Scripted, FLEURS and paired MediaSpeech probes are materialized and A0 reports are complete. Do not start LoRA training or finalize this lock."
+}

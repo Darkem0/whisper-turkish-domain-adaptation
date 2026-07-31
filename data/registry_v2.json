@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "verified_at_utc": "2026-07-30T00:00:00Z",
+  "policy": {
+    "allowed": "public, labelled Turkish speech only",
+    "forbidden": ["company data", "raw call data", "pseudo labels", "private or unlicensed audio"],
+    "materialization_rule": "A consumed source, audio and output manifest must each have SHA-256 evidence."
+  },
+  "datasets": [
+    {
+      "id": "issai/Turkish_Speech_Corpus",
+      "source": "huggingface",
+      "revision": "d79ea01392882322e8f46657cb635236af25b6d4",
+      "official_license": "CC-BY-4.0",
+      "huggingface_license_metadata": "MIT",
+      "license_metadata_conflict": true,
+      "commercial_clearance_required": true,
+      "raw_audio_redistribution": false,
+      "research_use": "provisional",
+      "use_modes": {
+        "research_provisional": {"local_experiment_allowed": true, "company_use_allowed": false, "model_or_adapter_publication_allowed": false},
+        "commercial_cleared": {"requires_clearance_evidence": true, "local_experiment_allowed": true, "company_use_allowed": true, "model_or_adapter_publication_allowed": true}
+      },
+      "archive_url": "https://huggingface.co/datasets/issai/Turkish_Speech_Corpus/resolve/main/ISSAI_TSC_218.tar.gz",
+      "archive_etag": "fde426bcaca8b1ab492765cb06fc61e2c0397cce8adb7f671027cdef3cba004f",
+      "archive_bytes": 21366175820,
+      "archive_sha256": "3feaba1f911542b587622d49c968bef971cfd8a4b3908d73090b8b914d2b694f",
+      "domains": ["tsc_proxy"]
+    },
+    {
+      "id": "openslr/SLR108/MediaSpeech/TR",
+      "source": "https://www.openslr.org/108/",
+      "revision": "SLR108",
+      "license": "CC-BY-4.0",
+      "commercial_clearance_required": false,
+      "raw_audio_redistribution": false,
+      "research_use": "allowed",
+      "domains": ["mediaspeech_proxy"]
+    },
+    {
+      "id": "mozilla-foundation/common_voice_spontaneous_tr",
+      "source": "huggingface",
+      "revision": "PIN_AT_MATERIALIZATION",
+      "license": "CC0-1.0",
+      "commercial_clearance_required": false,
+      "raw_audio_redistribution": false,
+      "research_use": "allowed",
+      "domains": ["cv_spontaneous"]
+    },
+    {
+      "id": "mozilla-foundation/common_voice_scripted_tr",
+      "source": "huggingface",
+      "revision": "PIN_AT_MATERIALIZATION",
+      "license": "CC0-1.0",
+      "commercial_clearance_required": false,
+      "raw_audio_redistribution": false,
+      "research_use": "allowed_replay_regression_only",
+      "domains": ["cv_scripted"]
+    },
+    {
+      "id": "google/fleurs",
+      "source": "huggingface",
+      "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+      "config": "tr_tr",
+      "license": "CC-BY-4.0",
+      "commercial_clearance_required": false,
+      "raw_audio_redistribution": false,
+      "research_use": "regression_only",
+      "domains": ["fleurs_tr_tr"]
+    }
+  ]
+}

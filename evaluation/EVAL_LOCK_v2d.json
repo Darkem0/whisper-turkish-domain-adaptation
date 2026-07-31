@@ -1,0 +1,15 @@
+{
+  "schema_version": 2,
+  "lock_status": "finalized_a0_baseline",
+  "files": {
+    "evaluation/suite_v2d.json": "04b73ae0af2db4d52746b53b0484e3cae6ca842fca8acacd8ecb315899865e7b",
+    "src/whisper_arge/cv_spontaneous.py": "c94db216d88512f29d742be0d94ba6ad2af596da677329c8554da075fd09b73f",
+    "src/whisper_arge/evaluation_v2.py": "74ff97f38894b216f1d3c0fef484da0c1b846d60912fe65c2082629bdc71641c",
+    "src/whisper_arge/mediaspeech.py": "76b0411ee6be6a02cb0a523b2a64855af3e975313aaf5bd148358eb2879b71a2",
+    "src/whisper_arge/hf_corpora.py": "b3131bc66b6cc9bd8b3337309a4b04320f1e3fbda0d198768c45b55aefee5fd2",
+    "src/whisper_arge/inference.py": "fca0a847f38b91e2ac7486a17c4671880c8f037e03dae08d04159411b4bfb73f",
+    "src/whisper_arge/mediaspeech_degradation.py": "6873baaae05eea9fbb97dcbf3ae256de25d5f81911b6d47c766ec53257fe1bb2"
+  },
+  "pending_before_real_experiments": [],
+  "rule": "Immutable evaluation definition for v2d A0 and candidate comparisons."
+}

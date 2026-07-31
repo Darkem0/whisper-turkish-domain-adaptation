@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper-tr-autoresearch"
+version = "0.1.0"
+description = "Reproducible multi-domain Turkish Whisper large-v3-turbo research"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.4",
+  "ruff==0.8.4",
+]
+research = [
+  "accelerate==1.1.1",
+  "datasets[audio]==3.1.0",
+  "jiwer==3.0.5",
+  "librosa==0.10.2.post1",
+  "numpy==1.26.4",
+  "peft==0.13.2",
+  "safetensors==0.4.5",
+  "scipy==1.14.1",
+  "soundfile==0.12.1",
+  "transformers==4.46.3",
+]
+
+[project.scripts]
+whisper-arge = "whisper_arge.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

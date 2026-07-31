@@ -1,0 +1,11 @@
+{
+  "dataset_id": "issai/Turkish_Speech_Corpus",
+  "split": "official_utterance_split",
+  "source_disjoint": false,
+  "speaker_disjoint": false,
+  "use_for_acceptance": false,
+  "official_test_available_hours": 4.378545833333333,
+  "requested_nested_tiers_hours": {"smoke": 1, "selection": 5, "full": 10},
+  "materialized": {"smoke": {"hours": 1.0003397222222221, "status": "complete"}, "selection": {"hours": 4.378545833333333, "status": "insufficient_official_test_capacity"}, "full": {"hours": 4.378545833333333, "status": "insufficient_official_test_capacity"}},
+  "rule": "Selection and full must not be represented as 5h/10h tiers; use only the explicitly reported available duration."
+}

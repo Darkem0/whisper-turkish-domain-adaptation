@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "lock_status": "pending_baseline_calibration",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "files": {
+    "evaluation/acceptance_v2a.json": "3fe90f26eef324188b2e0296236b80572138932b2861586af260b64919c1e33a"
+  },
+  "pending_before_finalization": ["A0 acceptance-core results", "A0 bootstrap variance", "Numeric thresholds"],
+  "rule": "No LoRA reservation or training while pending_baseline_calibration."
+}

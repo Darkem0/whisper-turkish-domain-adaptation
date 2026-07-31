@@ -1,0 +1,1 @@
+$Root=Split-Path -Parent $PSScriptRoot; $p=Join-Path $Root 'state\supervisor.pid'; if(Test-Path $p){$id=[int](Get-Content $p -Raw); Stop-Process -Id $id -ErrorAction SilentlyContinue; Write-Host "Stop requested for supervisor $id"}
