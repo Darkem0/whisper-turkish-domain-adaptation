@@ -67,8 +67,17 @@ nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar
 - Negatif transfer saklanmamalıdır.
 - Prediction artefaktlarından bağımsız metric recomputation kritik önemdedir.
 
+## Pratik başlangıç noktaları
+
+- **Sonuçları ve gerekçeleri öğrenmek için:** [Ne işe yaradı, ne işe yaramadı?](docs/practical_research_guide.md)
+- **Yerel proje klasörünü baştan sona analiz ettirmek için:** [Codex proje arkeolojisi promptu](docs/codex_project_archaeology_prompt.md)
+- **Bütün deneyleri hızlı karşılaştırmak için:** [Deney kataloğu](docs/experiment_catalog.md)
+- **Hataları tekrar etmemek için:** [Negatif sonuçlar ve araştırma hataları](docs/negative_results.md)
+
 ## Dokümantasyon
 
+- [Pratik araştırma rehberi](docs/practical_research_guide.md)
+- [Codex proje arkeolojisi ve yayın promptu](docs/codex_project_archaeology_prompt.md)
 - [Tam araştırma raporu](docs/full_research_report.md)
 - [Deney kataloğu](docs/experiment_catalog.md)
 - [Çağrı/telefon odaklı değerlendirme](docs/call_oriented_evaluation.md)
