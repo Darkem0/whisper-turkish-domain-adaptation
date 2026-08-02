@@ -1,8 +1,8 @@
 # Whisper Large-v3-Turbo Türkçe Alan Uyarlaması
 
-Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılıklı konuşma koşullarına uyarlamak için yürütülen açık-veri araştırmasının belgelenmiş sonucudur.
+Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılıklı konuşma koşullarına uyarlamak için yürütülen açık-veri araştırmasının **kanonik araştırma, makale ve yeniden üretim merkezidir**.
 
-Çalışma artık üç ayrı bilgi katmanını kapsar:
+Çalışma üç bilgi katmanını kapsar:
 
 1. **Legacy seri:** genel Türkçe LoRA, balanced-phone continuation ve repeat-safe decode denemeleri.
 2. **Kontrollü A0–A7 serisi:** LoRA kapsamı, replay, staged domain adaptation, telefon augmentasyonu ve negatif transfer analizleri.
@@ -10,12 +10,23 @@ Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılı
 
 > Ana sonuç: A7 staged domain adaptation, kontrollü seride en iyi Phone WER sonucunu verdi; ancak CV Scripted gibi genel-domain ölçütlerinde maliyet oluştu. Tek bir adapter bütün Türkçe konuşma türlerinde en iyi değildir.
 
+## Nihai makale
+
+- **[Türkçe Telefon-Benzeri Konuşmalar için Whisper Large-v3-Turbo Uyarlaması](paper/final_manuscript_tr.md)**
+- [Tam araştırma raporu](docs/full_research_report.md)
+- [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md)
+- [GitHub depo ekosistemi denetimi](docs/repository_ecosystem_audit.md)
+
+Atıf bilgisi: [`CITATION.cff`](CITATION.cff)
+
 ## Temel sonuçlar
 
 | Karşılaştırma | Normalize Phone WER |
 |---|---:|
+| A0 | 0.175690 |
 | A2 | 0.170825 |
 | A4 | 0.158385 |
+| A5 | 0.157968 |
 | A6 | 0.157203 |
 | **A7 step-200** | **0.154285** |
 
@@ -30,16 +41,21 @@ Bilimsel sınıflandırma:
 - `augmentation_contribution_inconclusive`
 - `OPEN_DATA_EXPERIMENT_LINE_COMPLETED`
 
+Aggregate public tablolar:
+
+- [`public/metrics/authoritative_phone_summary.csv`](public/metrics/authoritative_phone_summary.csv)
+- [`public/metrics/a7_checkpoint_metrics.csv`](public/metrics/a7_checkpoint_metrics.csv)
+
 ## Deney özeti
 
 | Deney | Yöntem | Kısa sonuç |
 |---|---|---|
 | A0 | Base model | Kontrollü referans |
-| A2 | Encoder+decoder Q/V LoRA | Telefon alanında anlamlı iyileşme, bazı genel-domain kayıpları |
+| A2 | Encoder+decoder Q/V LoRA | Telefon alanında iyileşme, FLEURS maliyeti |
 | A3 | Encoder-only + %10 replay | Robustness iyileşti; CV Scripted ciddi kötüleşti |
-| A4 | Decoder-only, zero replay | Güçlü Phone ve robustness adayı |
-| A5 | Encoder-only, temiz schedule | Phone iyileşti; A4 üstünlüğünü geçemedi |
-| A6 | Encoder+decoder, temiz schedule | A5’ten farklı çıktı; ilk analizdeki sıfır-delta sonucu script hatasıydı |
+| A4 | Decoder-only, zero replay | Güçlü Phone ve robustness Pareto adayı |
+| A5 | Encoder-only, temiz schedule | Phone iyileşti; A4 robustness seviyesini geçemedi |
+| A6 | Encoder+decoder, temiz schedule | A5’ten farklı çıktı; eski zero-delta analizi script hatasıydı |
 | A7 | A2 parent + TSC source anchor + telefon odaklı staged continuation | En iyi kontrollü Phone sonucu; genel-domain maliyet |
 
 ## Neden yalnız WER yetmiyor?
@@ -69,15 +85,59 @@ nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar
 - Prediction artefaktlarından bağımsız metric recomputation kritik önemdedir.
 - Araştırılmış bir yöntem, çalıştırılmış deney gibi sunulmamalıdır.
 - ChatGPT konuşma hafızası ile artefakt-doğrulamalı sonuçlar ayrı kanıt sınıflarında tutulmalıdır.
+- Hız optimizasyonu prediction çıktısını değiştiriyorsa aynı bilimsel koşul sayılmaz.
+- Checkpoint ağırlığı, scheduler ve sample schedule aynı global step’ten devam etmelidir.
+
+## Tek giriş noktası, korunmuş bağımsız repolar
+
+Bu repo bütün araştırmanın kanonik merkezidir. Çalışır public bileşenler bağımsız Git geçmişleriyle korunur:
+
+- **[Turkish Speech Processing Platform](https://github.com/Darkem0/turkish-speech-processing-platform)** — stereo WAV inceleme, kanal split, rol/timestamp merge, duplicate suppression, fixture WER/CER ve local API.
+- **[Contact Center AI Evaluation Suite](https://github.com/Darkem0/contact-center-ai-evaluation-suite)** — sentetik diyalog üzerinde typed, evidence-linked downstream değerlendirme.
+- **[Research Publications](https://github.com/Darkem0/research-publications)** — kaynak-doğrulamalı yayın metadata kaydı.
+- **[Applied AI Engineering Portfolio](https://github.com/Darkem0/applied-ai-engineering-portfolio)** — proje ve kanıt seviyesi dizini.
+
+Commit-kilitli registry:
+
+- [`ecosystem/components.lock.json`](ecosystem/components.lock.json)
+- [`ecosystem/README.md`](ecosystem/README.md)
+
+Bütün public bileşenleri aynı yerel çalışma alanına almak için:
+
+```bash
+python scripts/bootstrap_public_ecosystem.py --destination components
+```
+
+Sadece çalışır speech ve downstream evaluator bileşenleri:
+
+```bash
+python scripts/bootstrap_public_ecosystem.py \
+  --destination components \
+  --include speech_processing contact_center_evaluation
+```
+
+Diğer depolar silinmez veya zorla merge edilmez. Bu yapı tek bir kanonik giriş noktası sağlar ve companion repo geçmişlerini korur.
+
+## Hızlı başlangıç
+
+Araştırma deposunun sentetik ve dependency-free varsayılan yolu:
+
+```bash
+python -m whisper_adaptation demo
+python -m whisper_adaptation evaluate --manifest experiments/adapter-routing.json
+python -m unittest discover -s tests -v
+```
+
+Bu komutlar model indirmez ve tarihsel A0–A7 metriklerini yeniden üretme iddiası taşımaz. Varsayılan fixture, araştırma sözleşmesini ve metric kodunu gösterir.
 
 ## Tam ChatGPT Whisper deneyim arşivi
 
 Aşağıdaki belgeler yalnız mevcut proje serisini değil, erişilebilen bütün Whisper çalışma geçmişini kapsar:
 
-- [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md): 2025–2026 boyunca model eğitimi, I3R, stereo, timestamp, VAD, runtime, A0–A7 ve pseudo-label araştırmasının birleşik kaydı.
-- [Whisper deneyim zaman çizelgesi](docs/whisper_experience_timeline.md): İlk kişisel fine-tune sorularından A7 terminal kararına kadar kronolojik gelişim.
-- [Araştırılan ve uygulanan yöntemler matrisi](docs/research_vs_executed_matrix.md): Gerçekten çalıştırılan, reddedilen, belirsiz ve yalnız araştırılan yöntemlerin ayrımı.
-- [ChatGPT hafızası kapsamı ve redaksiyon](docs/chatgpt_memory_provenance.md): Kaynak önceliği, erişim sınırı, gizlilik ve public yayın kuralları.
+- [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md)
+- [Whisper deneyim zaman çizelgesi](docs/whisper_experience_timeline.md)
+- [Araştırılan ve uygulanan yöntemler matrisi](docs/research_vs_executed_matrix.md)
+- [ChatGPT hafızası kapsamı ve redaksiyon](docs/chatgpt_memory_provenance.md)
 
 Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümkün olan en geniş sentezdir. Silinmiş, indekslenmemiş veya erişilemeyen eski sohbetlerin eksiksiz kapsandığı iddia edilmez.
 
@@ -87,8 +147,15 @@ Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümk�
 - **Yerel proje klasörünü baştan sona analiz ettirmek için:** [Codex proje arkeolojisi promptu](docs/codex_project_archaeology_prompt.md)
 - **Bütün deneyleri hızlı karşılaştırmak için:** [Deney kataloğu](docs/experiment_catalog.md)
 - **Hataları tekrar etmemek için:** [Negatif sonuçlar ve araştırma hataları](docs/negative_results.md)
+- **Repo/branch birleştirme kararını görmek için:** [Ekosistem denetimi](docs/repository_ecosystem_audit.md)
 
 ## Dokümantasyon
+
+### Nihai yayın
+
+- [Final makale](paper/final_manuscript_tr.md)
+- [GitHub depo ekosistemi denetimi](docs/repository_ecosystem_audit.md)
+- [Public metric tabloları](public/metrics/README.md)
 
 ### Bütünleşik deneyim arşivi
 
@@ -116,6 +183,18 @@ Bu çalışma gerçek şirket veya çağrı merkezi verisi kullanıldığı iddi
 Tam deneyim arşivinde eski gerçek çağrı tecrübelerinden teknik dersler yer alır; ham ses, transcript, kişi adı, dahili ağ yolu, servis kimliği veya şirket altyapı ayrıntısı yayımlanmaz.
 
 A7 step-200, `ADAPTER_CONTINUATION_WITH_OPTIMIZER_RESET` yöntemiyle step-150’den tamamlanmıştır. Bu durum sonuçların yorumunda açıkça belgelenmiştir.
+
+## Gizlilik ve yayımlanmayan artefaktlar
+
+Bu depoda şunlar yer almaz:
+
+- ham ses ve özel transkript,
+- model checkpointi veya adapter ağırlığı,
+- token, secret ve `.env`,
+- private manifest ve materialized veri,
+- mutlak yerel/sunucu yolları,
+- müşteri veya çalışan kimliği,
+- dahili servis topolojisi.
 
 ## Lisans
 

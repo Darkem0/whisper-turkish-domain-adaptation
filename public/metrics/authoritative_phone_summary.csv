@@ -1,0 +1,8 @@
+model,checkpoint,dataset,normalized_wer,evidence_class,notes
+A0,base,mediaspeech_phone,0.17569,ARTEFACT_VERIFIED,controlled baseline
+A2,base,mediaspeech_phone,0.170825,ARTEFACT_VERIFIED,encoder+decoder Q/V LoRA
+A4,step-050,mediaspeech_phone,0.158385,ARTEFACT_VERIFIED,decoder-only zero replay
+A5,step-100,mediaspeech_phone,0.157968,ARTEFACT_VERIFIED,encoder-only clean schedule
+A6,step-200,mediaspeech_phone,0.157203,ARTEFACT_VERIFIED,encoder+decoder clean schedule
+A7,step-200,mediaspeech_phone,0.15428452289943706,ARTEFACT_VERIFIED,staged adaptation; optimizer-reset continuation from step-150
+A7,step-150,robustness_proxy,0.14757801098061019,ARTEFACT_VERIFIED,best A7 robustness checkpoint

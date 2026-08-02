@@ -7,7 +7,41 @@ build/
 *.egg-info/
 .venv/
 venv/
+
+# Credentials and local configuration
 .env
+.env.*
+!.env.example
+
+# Generated model and audio artefacts
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.aac
+*.gsm
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
 checkpoints/
 audio/
+
+# Local experiment state and generated outputs
+runs/
+logs/
+state/
+outputs/
 reports/
+wandb/
+.cache/
+
+# Private or governed data roots
+company_data/
+private_data/
+data/materialized/
+
+# Commit-pinned companion repositories are materialized locally
+components/
