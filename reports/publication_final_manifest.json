@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "repository": "Darkem0/whisper-turkish-domain-adaptation",
+  "main_base_sha": "06a2ca672dcda383a1a5f89a6f733b6c51bbd7ff",
+  "source_snapshot_sha": "793c730801a91cb6f4212c23326197a077cf7e5d",
+  "branch": "codex/reconcile-whisper-research-docs",
+  "reconciliation_method": "file_by_file_no_history_merge",
+  "removed_paths": [
+    "docs/NEGATIVE_RESULTS.md"
+  ],
+  "excluded_categories": [
+    "raw_audio",
+    "transcripts",
+    "prediction_jsonl",
+    "private_manifests",
+    "checkpoints",
+    "adapters",
+    "logs",
+    "state",
+    "cache",
+    "unknown_untracked"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "a567015d7cf3734f55759630163ad55ae45fefba4ef9630277efa7ed89bbb461",
+      "size_bytes": 273
+    },
+    {
+      "path": "docs/codex_project_archaeology_prompt.md",
+      "sha256": "d85984b150b8d8240f86b1e8d77078782fa6aaa44cdb189b7d18ae9c1d4d28c9",
+      "size_bytes": 12145
+    },
+    {
+      "path": "docs/practical_research_guide.md",
+      "sha256": "b94dfdc59d2adba72846f622badd77add8cd7e5a6e92943437019a0941e6030a",
+      "size_bytes": 30196
+    },
+    {
+      "path": "README.md",
+      "sha256": "7b26f482d66ef4aee61cfc3764046418fe03f1f8b93f9a6e8328030f4847e919",
+      "size_bytes": 7534
+    },
+    {
+      "path": "reports/a7_v2_checkpoint_dataset_metrics.csv",
+      "sha256": "3349728a906d5a367ac1c6a56a0b8aa6f6c5fc0eef3bdaaa78e9edcdd1b141f5",
+      "size_bytes": 5837
+    },
+    {
+      "path": "reports/a7_v2_comparative_analysis.md",
+      "sha256": "3c5edf0f4af45177b5cb457cb549c6f61295c7fffb73dabfaf82174480ca07bb",
+      "size_bytes": 659
+    },
+    {
+      "path": "reports/a7_v2_frozen_evaluation_integrity.md",
+      "sha256": "b3fe91df8287ed10b1ba351a58bbc3c6ebb39f8c500ce925dd6906e338d64515",
+      "size_bytes": 576
+    },
+    {
+      "path": "reports/a7_v2_statistical_analysis.md",
+      "sha256": "2d7ee615dce92c40362e8e0a4857e4125f149b0b2303800b1449aa16147d70b2",
+      "size_bytes": 404
+    },
+    {
+      "path": "reports/authoritative_artifact_registry.json",
+      "sha256": "98d7a810202e8258d66754d3a943c70e8e2027d9bff3240117fa4d0b920a07a5",
+      "size_bytes": 1024
+    },
+    {
+      "path": "reports/authoritative_metrics_summary.csv",
+      "sha256": "ce7d1df43c1ab4169c906ee641fc1707cb99d530b28e4b72da6982ef365a0ff1",
+      "size_bytes": 252
+    },
+    {
+      "path": "reports/authoritative_metrics_summary.md",
+      "sha256": "41bbc1aea20fded32715dbbcea30c7a6ee1bc3679bf2ac5ae81afb3da9fc62ae",
+      "size_bytes": 585
+    },
+    {
+      "path": "reports/codex_branch_reconciliation_inventory.md",
+      "sha256": "6aaffc757c52d473cd091125a018bf1f780bca72400f1cb623be57dac366b734",
+      "size_bytes": 2425
+    },
+    {
+      "path": "reports/complete_method_inventory.csv",
+      "sha256": "5448e2a4c8b97ff08a63b44290563ca9d705614bfc13e15b7e8bae24e611f9dd",
+      "size_bytes": 1068
+    },
+    {
+      "path": "reports/complete_method_inventory.md",
+      "sha256": "654c3a7492e669855ba3082a86c8b2c98799b017d00ded4834d228b598c43a97",
+      "size_bytes": 1236
+    },
+    {
+      "path": "reports/metric_discrepancy_log.md",
+      "sha256": "74ce84a5ca3b0a9e0c058d5b379af0ee7ecc826c0125e039a0dc090d22e98906",
+      "size_bytes": 1458
+    },
+    {
+      "path": "reports/project_archaeology_inventory.md",
+      "sha256": "6d98d15efe5b80e6d780c2ebb479ad80d8dd37b54f5c63c9173fe156117103c0",
+      "size_bytes": 1319
+    },
+    {
+      "path": "reports/project_timeline.md",
+      "sha256": "d0839bd6dbdafc7de93a0b47d4dae79743b86fabec8e1e0631d1c165235853f6",
+      "size_bytes": 608
+    },
+    {
+      "path": "reports/publication_discrepancy_log.md",
+      "sha256": "bab6e0117c0b15e0e5f47f3aba86ad6ed3f1c15b05e19da6651134f678b0de50",
+      "size_bytes": 1509
+    },
+    {
+      "path": "reports/publication_link_check.md",
+      "sha256": "290d2f29aa75c75b69fd8ba2686ffac936ef7e2bd33f509fc44d183f9fc96d7b",
+      "size_bytes": 451
+    },
+    {
+      "path": "reports/publication_privacy_scan.md",
+      "sha256": "3f6eb284620ac805377cf4516dcaa26c0b8fc0ec9850e51ebd7cb20013617088",
+      "size_bytes": 835
+    },
+    {
+      "path": "reports/publication_self_audit.md",
+      "sha256": "8d4d2c813787c81cb38c805aa889fa428a0d1b386c5a2e1d0e20f184d343a0e4",
+      "size_bytes": 1630
+    },
+    {
+      "path": "reports/publication_test_results.md",
+      "sha256": "4eb8522aac23d28328538dfbb7acc6428ca2439630142cc42acd2f050cc4e303",
+      "size_bytes": 1223
+    },
+    {
+      "path": "reports/untracked_artifact_classification.md",
+      "sha256": "d209dc5233e29e4ada7a7dd294b6ee3066d4c979d53eaf89f16e170599b48b5f",
+      "size_bytes": 18876
+    }
+  ],
+  "self_hash": "EXCLUDED_TO_AVOID_SELF_REFERENCE"
+}

@@ -82,7 +82,7 @@ Legacy metrikleri yeni seriyle doğrudan tek tabloda kıyaslanmamalıdır. Veri,
 | %10 clean replay | CV Scripted korumasında yetersiz | Başarısız koruma | Replay varlığı tek başına yeterli değil; içerik/oran/katman kapsamı önemli |
 | D3 decode profili | Desteklenen ve karşılaştırılabilir profil | Korundu | Evaluation standardizasyonu sağladı |
 | MEM0 memory profili | Tahminleri değiştirmeyen güvenli profil | Korundu | Hız/bellek optimizasyonu kaliteyi değiştirmedi |
-| MEM2 | Anlamlı hız kazancı yok | Reddedildi | Ek karmaşıklık karşılığında pratik fayda oluşmadı |
+| MEM2 | İlk sıcak-cache microbenchmarkında yaklaşık %32,12; interleaved doğrulamada anlamlı kazanç yok | Microbenchmark olumlu, deployment belirsiz; canonical değil | Fixed-order/warm-up etkisi ayrıştırıldığında MEM0 karşısında promotion eşiği geçilmedi |
 | MEM3/MEM4 | Batch’e göre prediction değişimi | Reddedildi | Kalite parity bozuldu; üretim güveni düşürdü |
 | İkinci decode/retry | Tetiklenmedi veya bilgi kazancı üretmedi | Reddedildi | Karmaşıklık ekledi, ölçülebilir fayda göstermedi |
 | Deterministic ITN | Güvenli dönüşüm bulunamadı | Reddedildi | Yanlış normalizasyon kritik sayı/tarih/tutar hatası oluşturabilir |
@@ -532,8 +532,9 @@ Tetiklenmeyen veya ölçülebilir bilgi kazancı üretmeyen retry hattı bakım 
 
 ### MEM2
 
-- Anlamlı hız kazancı yok.
-- Ek karmaşıklık pratik faydayı karşılamadı.
+- İlk sabit sıralı/sıcak-cache microbenchmarkında prediction parity korunarak yaklaşık `%32,12` hızlanma görüldü.
+- Sonraki interleaved cold/warm doğrulama fixed-order ve warm-up etkisini ayırdı; promotion için anlamlı hız kazancı göstermedi.
+- Bu nedenle sınıfı `microbenchmark_positive / deployment_inconclusive / not_canonical`dır; doğrudan başarısız sayılmaz, fakat MEM0’ın yerini almaz.
 
 ### MEM3/MEM4
 

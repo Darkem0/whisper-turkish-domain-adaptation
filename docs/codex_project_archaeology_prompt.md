@@ -7,7 +7,7 @@ AGENTS.md dosyasını oku.
 
 Proje kökü:
 
-C:\Users\emre\Documents\Whisper ARGE
+<PROJECT_ROOT>
 
 Amaç:
 

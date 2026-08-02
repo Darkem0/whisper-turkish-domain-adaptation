@@ -1,0 +1,21 @@
+{
+  "source_commit": "793c730801a91cb6f4212c23326197a077cf7e5d",
+  "main_base": "06a2ca672dcda383a1a5f89a6f733b6c51bbd7ff",
+  "scan_file_count": 201256,
+  "authoritative_experiments": ["A0", "A2", "A3", "A4", "A5", "A6", "A7"],
+  "a7_frozen_evaluation_targets": 28,
+  "a7_authoritative_checkpoints": {
+    "step-050": "runs/A7_v2_staged_balanced_phone_200/checkpoints/step-050",
+    "step-100": "runs/A7_v2_staged_balanced_phone_200/checkpoints/step-100",
+    "step-150": "runs/A7_v2_staged_balanced_phone_200/checkpoints/step-150",
+    "step-200": "runs/A7_v2_resume150_final_200_retry1/checkpoints/step-200"
+  },
+  "a7_final_adapter_sha256": "fa5aa88e3d7fd1c16b7b7cdb0c516bc7d49210f3c5cb63c8405f280bad9e4894",
+  "excluded": [
+    "A3_legacy_aborted_step34_invalid",
+    "A7 original-run and stale step-200 variants",
+    "A7 recovery-step-175",
+    "failed resume artifacts"
+  ],
+  "public_safety": "No company-call data or raw audio/transcripts are included. Paths are repository-relative provenance identifiers only."
+}

@@ -109,6 +109,14 @@ Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümk�
 - [Sınırlamalar ve gelecek çalışma](docs/limitations_and_future_work.md)
 - [Artefakt haritası](docs/artifact_map.md)
 
+### Makine-okunur ve denetlenebilir özetler
+
+- [Authoritative metrik özeti](reports/authoritative_metrics_summary.csv)
+- [Authoritative artefakt kaydı](reports/authoritative_artifact_registry.json)
+- [A7 checkpoint/dataset metrikleri](reports/a7_v2_checkpoint_dataset_metrics.csv)
+- [Metrik ve artefakt tutarsızlık günlüğü](reports/metric_discrepancy_log.md)
+- [Yayın uzlaştırması self-audit](reports/publication_self_audit.md)
+
 ## Kapsam ve dürüstlük notu
 
 Bu çalışma gerçek şirket veya çağrı merkezi verisi kullanıldığı iddiasında değildir. Kontrollü sonuçlar açık Türkçe veri setleri ve telefon-benzeri proxy değerlendirmelerinden gelir. Gerçek operasyonel performans; insan doğrulanmış hedef-domain test seti olmadan kesinleştirilemez.

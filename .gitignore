@@ -10,4 +10,5 @@ venv/
 .env
 checkpoints/
 audio/
-reports/
+# Public, aggregate research reports are tracked. Generated/private report
+# outputs must be ignored with explicit subdirectory rules when introduced.
