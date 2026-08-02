@@ -2,10 +2,11 @@
 
 Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılıklı konuşma koşullarına uyarlamak için yürütülen açık-veri araştırmasının belgelenmiş sonucudur.
 
-Çalışma iki ayrı deney dönemini kapsar:
+Çalışma artık üç ayrı bilgi katmanını kapsar:
 
 1. **Legacy seri:** genel Türkçe LoRA, balanced-phone continuation ve repeat-safe decode denemeleri.
 2. **Kontrollü A0–A7 serisi:** LoRA kapsamı, replay, staged domain adaptation, telefon augmentasyonu ve negatif transfer analizleri.
+3. **Tam deneyim arşivi:** 2025–2026 arasındaki erişilebilir ChatGPT hafızası, large-v2/large-v3 fine-tuning tecrübeleri, I3R ses hattı, stereo kanal ayrımı, VAD/diarization, GB10 runtime, decoding/memory araştırmaları ve audio-aware pseudo-label tasarımı.
 
 > Ana sonuç: A7 staged domain adaptation, kontrollü seride en iyi Phone WER sonucunu verdi; ancak CV Scripted gibi genel-domain ölçütlerinde maliyet oluştu. Tek bir adapter bütün Türkçe konuşma türlerinde en iyi değildir.
 
@@ -66,6 +67,19 @@ nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar
 - Normalize WER/CER, ham WER/CER ile birlikte raporlanmalıdır.
 - Negatif transfer saklanmamalıdır.
 - Prediction artefaktlarından bağımsız metric recomputation kritik önemdedir.
+- Araştırılmış bir yöntem, çalıştırılmış deney gibi sunulmamalıdır.
+- ChatGPT konuşma hafızası ile artefakt-doğrulamalı sonuçlar ayrı kanıt sınıflarında tutulmalıdır.
+
+## Tam ChatGPT Whisper deneyim arşivi
+
+Aşağıdaki belgeler yalnız mevcut proje serisini değil, erişilebilen bütün Whisper çalışma geçmişini kapsar:
+
+- [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md): 2025–2026 boyunca model eğitimi, I3R, stereo, timestamp, VAD, runtime, A0–A7 ve pseudo-label araştırmasının birleşik kaydı.
+- [Whisper deneyim zaman çizelgesi](docs/whisper_experience_timeline.md): İlk kişisel fine-tune sorularından A7 terminal kararına kadar kronolojik gelişim.
+- [Araştırılan ve uygulanan yöntemler matrisi](docs/research_vs_executed_matrix.md): Gerçekten çalıştırılan, reddedilen, belirsiz ve yalnız araştırılan yöntemlerin ayrımı.
+- [ChatGPT hafızası kapsamı ve redaksiyon](docs/chatgpt_memory_provenance.md): Kaynak önceliği, erişim sınırı, gizlilik ve public yayın kuralları.
+
+Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümkün olan en geniş sentezdir. Silinmiş, indekslenmemiş veya erişilemeyen eski sohbetlerin eksiksiz kapsandığı iddia edilmez.
 
 ## Pratik başlangıç noktaları
 
@@ -75,6 +89,15 @@ nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar
 - **Hataları tekrar etmemek için:** [Negatif sonuçlar ve araştırma hataları](docs/negative_results.md)
 
 ## Dokümantasyon
+
+### Bütünleşik deneyim arşivi
+
+- [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md)
+- [Whisper deneyim zaman çizelgesi](docs/whisper_experience_timeline.md)
+- [Araştırılan ve uygulanan yöntemler matrisi](docs/research_vs_executed_matrix.md)
+- [ChatGPT hafızası kapsam ve redaksiyon notu](docs/chatgpt_memory_provenance.md)
+
+### Kontrollü araştırma belgeleri
 
 - [Pratik araştırma rehberi](docs/practical_research_guide.md)
 - [Codex proje arkeolojisi ve yayın promptu](docs/codex_project_archaeology_prompt.md)
@@ -88,7 +111,9 @@ nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar
 
 ## Kapsam ve dürüstlük notu
 
-Bu çalışma gerçek şirket veya çağrı merkezi verisi kullanıldığı iddiasında değildir. Sonuçlar açık Türkçe veri setleri ve telefon-benzeri proxy değerlendirmelerinden gelir. Gerçek operasyonel performans; insan doğrulanmış hedef-domain test seti olmadan kesinleştirilemez.
+Bu çalışma gerçek şirket veya çağrı merkezi verisi kullanıldığı iddiasında değildir. Kontrollü sonuçlar açık Türkçe veri setleri ve telefon-benzeri proxy değerlendirmelerinden gelir. Gerçek operasyonel performans; insan doğrulanmış hedef-domain test seti olmadan kesinleştirilemez.
+
+Tam deneyim arşivinde eski gerçek çağrı tecrübelerinden teknik dersler yer alır; ham ses, transcript, kişi adı, dahili ağ yolu, servis kimliği veya şirket altyapı ayrıntısı yayımlanmaz.
 
 A7 step-200, `ADAPTER_CONTINUATION_WITH_OPTIMIZER_RESET` yöntemiyle step-150’den tamamlanmıştır. Bu durum sonuçların yorumunda açıkça belgelenmiştir.
 
