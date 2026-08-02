@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Bu araştırma arşivini kullanıyorsanız lütfen aşağıdaki biçimde atıf yapın."
+title: "Türkçe Telefon-Benzeri Konuşmalar için Whisper Large-v3-Turbo Uyarlaması"
+type: software
+authors:
+  - family-names: "Aslan"
+    given-names: "Emre"
+    orcid: "https://orcid.org/0009-0006-0291-0683"
+repository-code: "https://github.com/Darkem0/whisper-turkish-domain-adaptation"
+url: "https://github.com/Darkem0/whisper-turkish-domain-adaptation"
+license: MIT
+version: "1.0.0"
+date-released: "2026-08-02"
+abstract: >-
+  Türkçe Whisper large-v3-turbo alan uyarlaması için Legacy ve kontrollü A0-A7
+  deneylerini, telefon-benzeri açık veri proxy sonuçlarını, negatif transferi,
+  decoding ve memory çalışmalarını, checkpoint provenance bilgisini ve public
+  companion bileşenleri bir araya getiren araştırma arşivi.
+keywords:
+  - Whisper
+  - Turkish ASR
+  - speech recognition
+  - LoRA
+  - domain adaptation
+  - telephone speech
+  - negative transfer
