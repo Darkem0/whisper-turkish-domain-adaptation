@@ -1,37 +1,88 @@
-# Whisper Turkish Domain Adaptation
+# Whisper Large-v3-Turbo Türkçe Alan Uyarlaması
 
-A clean-room research scaffold for reproducible Turkish ASR adaptation experiments. It uses small synthetic fixtures by default and documents how to add public, licensed datasets without publishing private audio, checkpoints, call-derived metrics, or proprietary experiment logs.
+Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılıklı konuşma koşullarına uyarlamak için yürütülen açık-veri araştırmasının belgelenmiş sonucudur.
 
-The repository deliberately retains a synthetic negative-result example: fine-tuning can improve one split while degrading another. It treats raw and normalized WER/CER, domain boundaries, VAD/segmentation, repeat-safe decoding, and adapter routing as separate questions.
+Çalışma iki ayrı deney dönemini kapsar:
 
-## Quick start
+1. **Legacy seri:** genel Türkçe LoRA, balanced-phone continuation ve repeat-safe decode denemeleri.
+2. **Kontrollü A0–A7 serisi:** LoRA kapsamı, replay, staged domain adaptation, telefon augmentasyonu ve negatif transfer analizleri.
 
-~~~bash
-python -m whisper_adaptation demo
-python -m whisper_adaptation evaluate --manifest experiments/adapter-routing.json
-python -m whisper_adaptation repeat-safe --text "teşekkür ederim teşekkür ederim bilgi"
-python -m unittest discover -s tests -v
-~~~
+> Ana sonuç: A7 staged domain adaptation, kontrollü seride en iyi Phone WER sonucunu verdi; ancak CV Scripted gibi genel-domain ölçütlerinde maliyet oluştu. Tek bir adapter bütün Türkçe konuşma türlerinde en iyi değildir.
 
-The outputs are deterministic synthetic research demonstrations, not historical measurements or model-quality claims.
+## Temel sonuçlar
 
-## What is included
+| Karşılaştırma | Normalize Phone WER |
+|---|---:|
+| A2 | 0.170825 |
+| A4 | 0.158385 |
+| A6 | 0.157203 |
+| **A7 step-200** | **0.154285** |
 
-- Versioned JSON experiment manifests with public-data placeholders.
-- Raw and normalized WER/CER implementation.
-- Domain-split analysis and synthetic negative-result preservation.
-- VAD/segmentation evaluation hooks.
-- Repeat-safe decoding utility.
-- Adapter-routing rule prototype.
-- No model download, training job, private checkpoint, or private audio requirement.
+A7’nin en iyi robustness sonucu:
 
-## Documentation
+- **A7 step-150:** `0.147578`
 
-- [Methodology](docs/METHODOLOGY.md)
-- [Public-data and fixture provenance](docs/PROVENANCE.md)
-- [Negative results](docs/NEGATIVE_RESULTS.md)
-- [Limitations](docs/LIMITATIONS.md)
+Bilimsel sınıflandırma:
 
-## License
+- `staged_domain_adaptation_supported`
+- `staged_domain_adaptation_with_general_domain_cost`
+- `augmentation_contribution_inconclusive`
+- `OPEN_DATA_EXPERIMENT_LINE_COMPLETED`
 
-MIT. See [LICENSE](LICENSE).
+## Deney özeti
+
+| Deney | Yöntem | Kısa sonuç |
+|---|---|---|
+| A0 | Base model | Kontrollü referans |
+| A2 | Encoder+decoder Q/V LoRA | Telefon alanında anlamlı iyileşme, bazı genel-domain kayıpları |
+| A3 | Encoder-only + %10 replay | Robustness iyileşti; CV Scripted ciddi kötüleşti |
+| A4 | Decoder-only, zero replay | Güçlü Phone ve robustness adayı |
+| A5 | Encoder-only, temiz schedule | Phone iyileşti; A4 üstünlüğünü geçemedi |
+| A6 | Encoder+decoder, temiz schedule | A5’ten farklı çıktı; ilk analizdeki sıfır-delta sonucu script hatasıydı |
+| A7 | A2 parent + TSC source anchor + telefon odaklı staged continuation | En iyi kontrollü Phone sonucu; genel-domain maliyet |
+
+## Neden yalnız WER yetmiyor?
+
+Telefon ve çağrı benzeri konuşmalar:
+
+- kısa cevaplar,
+- konuşma kesintileri,
+- spontane söyleyiş,
+- kanal daralması,
+- gürültü,
+- tekrar/hallucination,
+- sayı, tarih, tutar ve özel isim hataları
+
+nedeniyle temiz okuma benchmarklarından farklı davranır. Bu nedenle sonuçlar iki ayrı panelde yorumlanır:
+
+- **Telefon/karşılıklı konuşma paneli:** MediaSpeech Phone, G.711, robustness proxy, CV Spontaneous.
+- **Genel Türkçe izleme paneli:** MediaSpeech Clean, CV Scripted, FLEURS, TSC.
+
+## Önemli metodolojik dersler
+
+- Türkçe veriyle fine-tuning yapmak otomatik olarak iyileşme sağlamaz.
+- Veri dağılımı ve domain dengesi model kapsamı kadar önemlidir.
+- Telefon augmentasyonu ve staged continuation birlikte fayda sağlayabilir; fakat A7 tasarımı augmentasyonun bağımsız nedensel katkısını ayırmaz.
+- Normalize WER/CER, ham WER/CER ile birlikte raporlanmalıdır.
+- Negatif transfer saklanmamalıdır.
+- Prediction artefaktlarından bağımsız metric recomputation kritik önemdedir.
+
+## Dokümantasyon
+
+- [Tam araştırma raporu](docs/full_research_report.md)
+- [Deney kataloğu](docs/experiment_catalog.md)
+- [Çağrı/telefon odaklı değerlendirme](docs/call_oriented_evaluation.md)
+- [Negatif sonuçlar ve hatalar](docs/negative_results.md)
+- [Yeniden üretilebilirlik](docs/reproducibility.md)
+- [Sınırlamalar ve gelecek çalışma](docs/limitations_and_future_work.md)
+- [Artefakt haritası](docs/artifact_map.md)
+
+## Kapsam ve dürüstlük notu
+
+Bu çalışma gerçek şirket veya çağrı merkezi verisi kullanıldığı iddiasında değildir. Sonuçlar açık Türkçe veri setleri ve telefon-benzeri proxy değerlendirmelerinden gelir. Gerçek operasyonel performans; insan doğrulanmış hedef-domain test seti olmadan kesinleştirilemez.
+
+A7 step-200, `ADAPTER_CONTINUATION_WITH_OPTIMIZER_RESET` yöntemiyle step-150’den tamamlanmıştır. Bu durum sonuçların yorumunda açıkça belgelenmiştir.
+
+## Lisans
+
+Kod iskeleti MIT lisanslıdır. Veri setleri ve modeller kendi lisanslarına tabidir. Model checkpointleri, özel sesler veya erişim kısıtlı artefaktlar bu depoda yayımlanmaz.
