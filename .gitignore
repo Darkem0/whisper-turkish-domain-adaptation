@@ -24,3 +24,22 @@ wandb/
 # Local orchestration state and rolling logs.
 state/
 logs/
+
+# Never publish credentials, private/company inputs, or generated model artefacts.
+.env
+.env.*
+!.env.example
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+outputs/
+company_data/
+private_data/
+.cache/

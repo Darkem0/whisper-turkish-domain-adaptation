@@ -1,62 +1,74 @@
-# Whisper Large-v3-turbo Türkçe Autoresearch
+# Türkçe Telefon Konuşmaları için Whisper Large-v3-Turbo Uyarlaması
 
-Bu depo, yalnızca `openai/whisper-large-v3-turbo` ve açık, etiketli Türkçe
-konuşma verileriyle çok-domain ASR araştırması içindir. Şirket/çağrı verisi,
-pseudo-label, kapalı veri ve alternatif final ASR modelleri bu fazın dışındadır.
+Bu depo, `openai/whisper-large-v3-turbo` ile açık Türkçe veri ve telefon-benzeri
+bozulmalar üzerinde yapılan kontrollü ASR araştırmasını belgeler. Sonuçlar
+MediaSpeech, Common Voice, FLEURS ve TSC gibi açık-veri proxylerinden gelir;
+gerçek çağrı merkezi performansı veya şirket verisi sonucu değildir.
 
-Mevcut durum:
+## Araştırma özeti
 
-- Eski deneyler, artifactleri kayıp **legacy kayıtlar** olarak
-  `ledger/experiments.jsonl` içinde korunur; yeniden üretilmiş sayılmaz.
-- Değerlendirme tanımı, normalizer ve metric kodu
-  `evaluation/EVAL_LOCK.json` ile kilitlenir.
-- Common Voice, MediaSpeech, FLEURS ve iki Khan Academy domaini ayrı raporlanır.
-- Sabit telefon/codec bozulmaları ayrı domainlerdir; temiz-domain negatif
-  transferi kabul kararına dahildir.
-- İlk yeni deney matrisi kısa 200-step eleme ile başlar. Uzun eğitim bu
-  başlangıç aşamasının parçası değildir.
+- D3, desteklenen decoding profilidir; MEM0 varsayılan bellek profilidir.
+- A2 encoder+decoder Q/V LoRA, hedef proxyde kazanç sağladı ancak FLEURS
+  regresyonu nedeniyle production adayı değildir.
+- A3 encoder-only + replay, CV Scripted guardrail nedeniyle promotable değildir.
+- A4 decoder-only, A5 encoder-only ve A6 encoder+decoder temiz-schedule
+  ablationları diagnostic-only olarak korunur.
+- A7, A2 parent adapter, TSC source anchor ve staged telefon augmentasyonu
+  kullanır. En iyi Phone normalized WER `0.154285` (step-200), en iyi
+  robustness proxy `0.147578` (step-150) değeridir. Step-200, step-150’den
+  optimizer-state olmadan devam eden izole bir continuation’dır.
 
-## Hızlı doğrulama
+Telefon hedefi ile genel Türkçe izleme ayrı değerlendirilir: Phone/G.711 ve
+robustness proxy iyileşmesi CV Scripted veya FLEURS maliyetini gizlemez; aynı
+şekilde genel-domain maliyeti de telefon proxy sonucunu otomatik geçersiz kılmaz.
+
+## Veri ve yöntem
+
+Araştırmada Common Voice TR, MediaSpeech TR, FLEURS TR, TSC ve tarihsel Khan
+Academy Türkçe kaynakları kullanılmış veya değerlendirilmiştir. Manifestler,
+normalizasyon, WER/CER ve frozen evaluation hedefleri kilitli artefaktlarla
+izlenir. LoRA/PEFT Q/V kapsamları, replay/source-anchor seçenekleri ve
+phone-band, G.711, 0.75x speed, noise/gain augmentasyonları kontrollü olarak
+incelenmiştir. Legacy VAD/segmentasyon ve repeat-safe decode bulguları tarihsel
+bağlamdır; mevcut kontrollü seriyle havuzlanmaz.
+
+## Deneyler
+
+| Deney | Amaç | Değişiklik | Durum | Temel sonuç |
+|---|---|---|---|---|
+| A0 | Referans | Base model | successful | Kontrollü başlangıç |
+| A2 | Hedef proxy | Encoder+decoder Q/V LoRA | failed promotion | Robustluk kazancı, FLEURS maliyeti |
+| A3 | Replay hipotezi | Encoder-only + replay | failed | Promotable checkpoint yok |
+| A4 | Scope ablation | Decoder-only, zero replay | diagnostic_only | Güçlü Phone ablationı |
+| A5 | Scope ablation | Encoder-only, clean schedule | limited | A4’ü domine etmedi |
+| A6 | Scope ablation | Encoder+decoder, clean schedule | diagnostic_only | Düzeltilmiş karşılaştırma |
+| A7 | Entegrasyon | A2 parent + anchor + augmentation | successful | En iyi gözlenen Phone proxy |
+
+## Çalıştırma ve doğrulama
 
 ```powershell
 python -m pip install -e ".[dev]"
 python -m pytest
 python -m whisper_arge.cli verify-eval-lock
 python -m whisper_arge.cli validate-matrix experiments/matrix_v1.jsonl
-python -m whisper_arge.cli ledger-summary ledger/experiments.jsonl
 ```
 
-Gerçek araştırma ortamı için RTX 4070/CUDA 12.1 kilidi:
+Araştırma bağımlılıkları için `requirements/research-cu121.lock.txt` kullanılır.
+Yeni eğitim veya inference, ilgili manifest/evaluation lock ve GPU preflight
+doğrulanmadan başlatılmamalıdır.
 
-```powershell
-python -m pip install -r requirements/research-cu121.lock.txt
-python -m pip install -e ".[dev]" --no-deps
-python -m whisper_arge.cli capture-environment > runs/environment-preflight.json
-```
+## Gizlilik ve yayın sınırı
 
-`requirements/research-cu121.lock.txt` geçmişte bu makinede doğrulanmış
-PyTorch/CUDA ailesini temel alır; gerçek koşudan önce `capture-environment`
-çıktısında CUDA availability ve GPU adı ayrıca doğrulanmalıdır.
+WAV dosyaları, ham transkriptler, checkpoint/adapter ağırlıkları, cache, yerel
+loglar ve şirket verisi GitHub’a eklenmez. Şirket-domain değerlendirmesi ancak
+yetkilendirilmiş secure root, insan doğrulamalı referanslar ve leakage-safe
+development/final-holdout ayrımı ile yapılabilir.
 
-Makinede `python` PATH'te yoksa Codex bundled Python kullanılabilir:
+## Belgeler
 
-```powershell
-$env:PYTHONNOUSERSITE="1"
-C:\Users\emre\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m pip install -e ".[dev]"
-C:\Users\emre\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m pytest
-```
-
-## Araştırma akışı
-
-1. `data/registry.json` revisionlarını ve lisansları doğrula.
-2. Kaynak manifestleri üret; her manifest için SHA-256 kaydet.
-3. `evaluation/suite_v1.json` seçimini bir kez materialize et ve lock dosyasına
-   gerçek manifest/audio hashlerini ekle.
-4. Base model predictionlarını aynı decode sözleşmesiyle bir kez üret.
-5. Matristeki smoke deneylerini yalnızca tek ana hipotez değiştirerek çalıştır.
-6. Kabul edilen adayı ledger'a yaz, artifact bundle'ını sakla ve ayrı commit et.
-   Reddedilen adayın kod/config değişikliğini izole commit üzerinden revert et.
-7. Yalnızca smoke eşiğini geçen adayları 500–1000 step'e yükselt.
-
-Detaylı plan için `docs/RESEARCH_PLAN.md`, komut ve artifact sözleşmesi için
-`docs/AUTORESEARCH_PROTOCOL.md` dosyalarına bakın.
+- [Tam araştırma raporu](docs/full_research_report.md)
+- [Deney kataloğu](docs/experiment_catalog.md)
+- [Telefon odaklı değerlendirme](docs/call_oriented_evaluation.md)
+- [Negatif sonuçlar](docs/negative_results.md)
+- [Yeniden üretilebilirlik](docs/reproducibility.md)
+- [Artefakt haritası](docs/artifact_map.md)
