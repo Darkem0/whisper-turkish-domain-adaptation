@@ -10,14 +10,23 @@ Bu depo, `openai/whisper-large-v3-turbo` modelini Türkçe telefon ve karşılı
 
 > Ana sonuç: A7 staged domain adaptation, kontrollü seride en iyi Phone WER sonucunu verdi; ancak CV Scripted gibi genel-domain ölçütlerinde maliyet oluştu. Tek bir adapter bütün Türkçe konuşma türlerinde en iyi değildir.
 
-## Nihai makale
+## Nihai makale ve hızlı rehberler
 
 - **[Türkçe Telefon-Benzeri Konuşmalar için Whisper Large-v3-Turbo Uyarlaması](paper/final_manuscript_tr.md)**
+- [Final English manuscript](paper/final_manuscript_en.md)
+- **[Neler işe yaradı, neler işe yaramadı?](docs/what_worked_what_failed_simple.md)**
+- **[A7 tarzı gerçek veri uyarlaması — hızlı uygulama rehberi](docs/a7_real_data_fast_path.md)**
+- [Yayın ve paylaşım paketi](paper/publication_package.md)
 - [Tam araştırma raporu](docs/full_research_report.md)
 - [Tam Whisper deneyim arşivi](docs/complete_whisper_experience_archive.md)
 - [GitHub depo ekosistemi denetimi](docs/repository_ecosystem_audit.md)
 
-Atıf bilgisi: [`CITATION.cff`](CITATION.cff)
+Atıf ve makine-okunur metadata:
+
+- [`CITATION.cff`](CITATION.cff)
+- [`codemeta.json`](codemeta.json)
+- [`llms.txt`](llms.txt)
+- [Arama ve dokümantasyon giriş sayfası](docs/index.md)
 
 ## Temel sonuçlar
 
@@ -57,6 +66,30 @@ Aggregate public tablolar:
 | A5 | Encoder-only, temiz schedule | Phone iyileşti; A4 robustness seviyesini geçemedi |
 | A6 | Encoder+decoder, temiz schedule | A5’ten farklı çıktı; eski zero-delta analizi script hatasıydı |
 | A7 | A2 parent + TSC source anchor + telefon odaklı staged continuation | En iyi kontrollü Phone sonucu; genel-domain maliyet |
+
+## Gerçek veriye geçerken en hızlı başlangıç
+
+Mevcut araştırmaya göre en yüksek bilgi değerli kısa yol:
+
+```text
+1. İnsan-doğrulanmış gerçek development ve final holdout hazırla
+2. A0, A4 ve A7’yi aynı decode ile ölç
+3. A7 tarzı düşük-LR 200-step staged continuation çalıştır
+4. 50/100/150/200 checkpointlerini gerçek dev sette karşılaştır
+5. Phone WER yanında deletion, kısa cevap ve sayı/tutar/tarih/isim hatalarını ölç
+6. Shortlist kilitlendikten sonra final holdout’u yalnız bir kez çalıştır
+```
+
+Başlangıç eğitim şablonu:
+
+- encoder+decoder `q_proj/v_proj` LoRA,
+- rank `16`, alpha `32`, dropout `0.05`,
+- learning rate `5e-6`,
+- batch `1`, gradient accumulation `16`,
+- `200` optimizer step,
+- yaklaşık `%25–35` değişmemiş anchor ve `%65–75` hedef telefon verisi.
+
+Bu şablon A7’den türetilmiştir; gerçek veride evrensel optimum olduğu iddia edilmez. Ayrıntılar: [A7 gerçek veri fast path](docs/a7_real_data_fast_path.md).
 
 ## Neden yalnız WER yetmiyor?
 
@@ -130,6 +163,20 @@ python -m unittest discover -s tests -v
 
 Bu komutlar model indirmez ve tarihsel A0–A7 metriklerini yeniden üretme iddiası taşımaz. Varsayılan fixture, araştırma sözleşmesini ve metric kodunu gösterir.
 
+## Arama motoru ve yapay zekâ keşfedilebilirliği
+
+Repo, insanlar ve makine okuyucuları için şu girişleri içerir:
+
+- doğal dilde kapsamlı README ve iki dilli makale,
+- `CITATION.cff` ile atıf metadata’sı,
+- `codemeta.json` ile yazılım/araştırma metadata’sı,
+- `llms.txt` ile kanonik sonuç ve belge dizini,
+- `docs/index.md` ile GitHub Pages uyumlu giriş sayfası,
+- public CSV metric tabloları,
+- açık kapsam, gizlilik ve evidence sınıfları.
+
+GitHub Pages etkinleştirilirse kaynak olarak `main` dalındaki `/docs` klasörü kullanılabilir.
+
 ## Tam ChatGPT Whisper deneyim arşivi
 
 Aşağıdaki belgeler yalnız mevcut proje serisini değil, erişilebilen bütün Whisper çalışma geçmişini kapsar:
@@ -143,7 +190,10 @@ Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümk�
 
 ## Pratik başlangıç noktaları
 
-- **Sonuçları ve gerekçeleri öğrenmek için:** [Ne işe yaradı, ne işe yaramadı?](docs/practical_research_guide.md)
+- **Hızlı karar için:** [Neler işe yaradı, neler işe yaramadı?](docs/what_worked_what_failed_simple.md)
+- **Gerçek veri eğitim planı için:** [A7 tarzı gerçek veri fast path](docs/a7_real_data_fast_path.md)
+- **Başka platformda yayınlamak için:** [Yayın ve paylaşım paketi](paper/publication_package.md)
+- **Sonuçları ve gerekçeleri ayrıntılı öğrenmek için:** [Pratik araştırma rehberi](docs/practical_research_guide.md)
 - **Yerel proje klasörünü baştan sona analiz ettirmek için:** [Codex proje arkeolojisi promptu](docs/codex_project_archaeology_prompt.md)
 - **Bütün deneyleri hızlı karşılaştırmak için:** [Deney kataloğu](docs/experiment_catalog.md)
 - **Hataları tekrar etmemek için:** [Negatif sonuçlar ve araştırma hataları](docs/negative_results.md)
@@ -153,9 +203,17 @@ Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümk�
 
 ### Nihai yayın
 
-- [Final makale](paper/final_manuscript_tr.md)
+- [Final Türkçe makale](paper/final_manuscript_tr.md)
+- [Final English manuscript](paper/final_manuscript_en.md)
+- [Yayın ve paylaşım paketi](paper/publication_package.md)
 - [GitHub depo ekosistemi denetimi](docs/repository_ecosystem_audit.md)
 - [Public metric tabloları](public/metrics/README.md)
+
+### Uygulanabilir rehberler
+
+- [Neler işe yaradı, neler işe yaramadı?](docs/what_worked_what_failed_simple.md)
+- [A7 tarzı gerçek veri fast path](docs/a7_real_data_fast_path.md)
+- [Pratik araştırma rehberi](docs/practical_research_guide.md)
 
 ### Bütünleşik deneyim arşivi
 
@@ -166,7 +224,6 @@ Arşiv, erişilebilen ChatGPT hafızası ve yüklenmiş kaynaklar içinde mümk�
 
 ### Kontrollü araştırma belgeleri
 
-- [Pratik araştırma rehberi](docs/practical_research_guide.md)
 - [Codex proje arkeolojisi ve yayın promptu](docs/codex_project_archaeology_prompt.md)
 - [Tam araştırma raporu](docs/full_research_report.md)
 - [Deney kataloğu](docs/experiment_catalog.md)
