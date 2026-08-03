@@ -1,0 +1,72 @@
+# Whisper Large-v3-Turbo Turkish Domain Adaptation
+
+> Canonical public research, manuscript, metrics, and reproducibility hub for Turkish telephone-like speech adaptation of `openai/whisper-large-v3-turbo`.
+
+Repository: https://github.com/Darkem0/whisper-turkish-domain-adaptation
+Author: Emre Aslan
+Language: Turkish and English
+License: MIT for original code and documentation; datasets and models retain their own licenses.
+
+## Canonical conclusions
+
+- Best controlled MediaSpeech Phone normalized WER: A7 step-200 = 0.15428452289943706.
+- Best A7 robustness-proxy normalized WER: A7 step-150 = 0.14757801098061019.
+- Staged domain adaptation is supported for the open-data telephone proxy.
+- A7 has a documented general-domain cost, especially on CV Scripted.
+- Augmentation contribution is inconclusive because A7 jointly changed parent continuation, source balance, and augmentation.
+- A4 decoder-only remains a strong robustness Pareto candidate.
+- These are open-data proxy results, not verified operational call-center performance.
+
+## Read first
+
+- README: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/README.md
+- Turkish final manuscript: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/paper/final_manuscript_tr.md
+- English final manuscript: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/paper/final_manuscript_en.md
+- Simple what-worked/what-failed guide: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/what_worked_what_failed_simple.md
+- A7-style real-data fast path: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/a7_real_data_fast_path.md
+- Full research report: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/full_research_report.md
+- Complete experience archive: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/complete_whisper_experience_archive.md
+- Negative results: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/negative_results.md
+- Reproducibility: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/docs/reproducibility.md
+
+## Public metrics
+
+- Phone summary: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/public/metrics/authoritative_phone_summary.csv
+- A7 checkpoint metrics: https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/public/metrics/a7_checkpoint_metrics.csv
+
+## Evidence classes
+
+- Artefact verified: checkpoint, prediction, hash, progress, or frozen-evaluation evidence exists.
+- Archival report: historical report exists but some original artefacts are unavailable.
+- Conversation memory: retained ChatGPT/project memory without a complete public artefact chain.
+- Researched not executed: literature or architecture research only.
+
+Do not present researched-only methods as executed experiments.
+
+## Main experimental series
+
+- Legacy-H0–H4: historical baseline, narrow-domain LoRA, general Turkish LoRA, balanced-phone continuation, repeat-safe decoding.
+- Controlled A0–A7: base, encoder/decoder LoRA scope, replay, clean schedules, staged source-anchored telephone adaptation.
+
+## Important negative results
+
+- MediaSpeech-only LoRA degraded normalized WER.
+- Lower validation loss did not guarantee better real-call behavior.
+- Ten-percent replay did not prevent CV Scripted forgetting.
+- Wider encoder+decoder LoRA scope did not automatically produce synergy.
+- MEM3/MEM4 batching changed predictions and was rejected for controlled evaluation.
+- The first A5–A6 zero-delta result was invalid because A6 was compared with itself; it is superseded.
+
+## Companion repositories
+
+- Stereo/channel/timestamp processing: https://github.com/Darkem0/turkish-speech-processing-platform
+- Downstream dialogue evaluation: https://github.com/Darkem0/contact-center-ai-evaluation-suite
+- Publication records: https://github.com/Darkem0/research-publications
+- Evidence-aware portfolio: https://github.com/Darkem0/applied-ai-engineering-portfolio
+
+Commit-pinned component registry:
+https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/ecosystem/components.lock.json
+
+## Privacy boundary
+
+This public repository excludes private audio, private transcripts, customer or employee identifiers, internal service topology, credentials, model checkpoints, local absolute paths, and restricted datasets.
