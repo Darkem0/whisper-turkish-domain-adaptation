@@ -1,0 +1,12 @@
+{
+  "contract_id": "A5_v2_encoder_only_zero_replay_data_manifest_lock",
+  "status": "READY_FOR_A5_V2_RESOURCE_SMOKE",
+  "materialized": {
+    "train": {"path": "data/materialized/training_a5_v2/a5_train_manifest.jsonl", "sha256": "452e602bcf025c416e52e023ecd1fc1d6e5dcdd9f6512fd863c9063c390fa16e"},
+    "validation": {"path": "data/materialized/training_a4_v2/a4_validation_manifest.jsonl", "sha256": "864e801656175b9dc515f52d2852f1a740d2d88224ee4801fcd45806f4c09976"},
+    "replay": {"path": "data/materialized/training_a5_v2/a5_replay_manifest.jsonl", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "schedule": {"path": "data/materialized/training_a5_v2/a5_sample_schedule.jsonl", "sha256": "dd277700c6d1052d12937ee523b874d6a7054c010602df913e8ffb6363acc570"},
+    "replacement_ledger": {"path": "data/materialized/training_a5_v2/a5_schedule_replacement_ledger.jsonl", "sha256": "691bd15e0c88b57438c659242240e2f09195c25099cb1c03906681f83d6c3cf6"}
+  },
+  "integrity_audit": {"path": "data/materialized/training_a5_v2/a5_data_integrity_audit.json", "required_status": "PASSED"}
+}

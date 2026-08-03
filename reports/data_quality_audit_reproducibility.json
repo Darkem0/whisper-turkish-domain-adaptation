@@ -1,0 +1,32 @@
+{
+  "audio_files_scanned": 181319,
+  "input_rows": {
+    "schedule": 3200,
+    "train": 172238,
+    "validation": 9081
+  },
+  "preflight": {
+    "actual_sha256": {
+      "data\\materialized\\training_a4_v2\\a4_sample_schedule.jsonl": "5e3e531a57372f3bf990d95409e455063690bfe3ab04541c44d2df513a15b446",
+      "data\\materialized\\training_a4_v2\\a4_train_manifest.jsonl": "8dd1b0624d2d97648f2c653ebd9f6acda814a3ff095e7894ea381e5e903acf55",
+      "data\\materialized\\training_a4_v2\\a4_validation_manifest.jsonl": "864e801656175b9dc515f52d2852f1a740d2d88224ee4801fcd45806f4c09976"
+    },
+    "expected_sha256": {
+      "data\\materialized\\training_a4_v2\\a4_sample_schedule.jsonl": "5e3e531a57372f3bf990d95409e455063690bfe3ab04541c44d2df513a15b446",
+      "data\\materialized\\training_a4_v2\\a4_train_manifest.jsonl": "8dd1b0624d2d97648f2c653ebd9f6acda814a3ff095e7894ea381e5e903acf55",
+      "data\\materialized\\training_a4_v2\\a4_validation_manifest.jsonl": "864e801656175b9dc515f52d2852f1a740d2d88224ee4801fcd45806f4c09976"
+    },
+    "passed": true,
+    "paths": [
+      "data\\materialized\\training_a4_v2\\a4_train_manifest.jsonl",
+      "data\\materialized\\training_a4_v2\\a4_validation_manifest.jsonl",
+      "data\\materialized\\training_a4_v2\\a4_sample_schedule.jsonl"
+    ],
+    "read_only": true,
+    "seed": 20260801
+  },
+  "read_only": true,
+  "seed": 20260801,
+  "status": "BLOCKED_DATA_INTEGRITY_CRITICAL",
+  "worker": "scripts/run_data_quality_automatic_audit.py"
+}

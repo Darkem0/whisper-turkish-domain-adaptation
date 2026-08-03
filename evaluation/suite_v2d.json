@@ -1,0 +1,12 @@
+{
+  "id": "tr_target_proxy_eval_v2d",
+  "status": "definition_locked_materialization_pending",
+  "supersedes": "evaluation/suite_v2c.json",
+  "acceptance_core": {
+    "required": ["mediaspeech_deterministic_utterance_holdout", "cv_spontaneous_speaker_holdout", "cv_scripted_official_test", "fleurs_tr_tr_official_test"],
+    "cv_spontaneous": {"dataset": "Mozilla Data Collective Common Voice Spontaneous Speech 4.0 Turkish", "license": "CC0-1.0", "split": "anonymous_client_id_speaker_disjoint", "disfluency_marker": "<disfluency>"},
+    "mediaspeech": {"official_test_assumption": false, "split": "sha256(dataset_revision + stable_id + seed) deterministic utterance holdout", "source_disjoint": false, "leakage_risk": "unknown", "paired_degradation_probes": ["clean_to_phone", "clean_to_g711_mulaw"]}
+  },
+  "tsc_exploratory": {"smoke_hours": 1, "selection_hours": 3, "full_hours": 4.378545833333333, "source_disjoint": false, "use_for_acceptance": false},
+  "decode_contract": {"model": "openai/whisper-large-v3-turbo", "model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "language": "tr", "task": "transcribe", "num_beams": 1, "do_sample": false, "condition_on_prev_tokens": false, "max_new_tokens": 448}
+}

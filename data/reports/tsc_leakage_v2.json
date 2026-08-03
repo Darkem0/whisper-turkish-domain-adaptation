@@ -1,0 +1,1219 @@
+{
+  "archive": "data\\raw\\ISSAI_TSC_218.tar.gz",
+  "archive_sha256": "3feaba1f911542b587622d49c968bef971cfd8a4b3908d73090b8b914d2b694f",
+  "audio_rows": 186170,
+  "audio_transcript_coverage": 1.0,
+  "audio_transcript_pairs": 186170,
+  "distinct_source_ids": 186170,
+  "duration_seconds": 785645.434875,
+  "grouping_quality": "utterance_only",
+  "inspection": [
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6589.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6589.txt",
+      "source_id": "utterance-6589"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5698.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5698.txt",
+      "source_id": "utterance-5698"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5167.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5167.txt",
+      "source_id": "utterance-5167"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5101.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5101.txt",
+      "source_id": "utterance-5101"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5691.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5691.txt",
+      "source_id": "utterance-5691"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3926.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3926.txt",
+      "source_id": "utterance-3926"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4879.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4879.txt",
+      "source_id": "utterance-4879"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4402.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4402.txt",
+      "source_id": "utterance-4402"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6792.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6792.txt",
+      "source_id": "utterance-6792"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6404.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6404.txt",
+      "source_id": "utterance-6404"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5168.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5168.txt",
+      "source_id": "utterance-5168"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6222.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6222.txt",
+      "source_id": "utterance-6222"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4605.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4605.txt",
+      "source_id": "utterance-4605"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5645.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5645.txt",
+      "source_id": "utterance-5645"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4353.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4353.txt",
+      "source_id": "utterance-4353"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4494.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4494.txt",
+      "source_id": "utterance-4494"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5721.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5721.txt",
+      "source_id": "utterance-5721"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4184.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4184.txt",
+      "source_id": "utterance-4184"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6530.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6530.txt",
+      "source_id": "utterance-6530"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6178.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6178.txt",
+      "source_id": "utterance-6178"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5313.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5313.txt",
+      "source_id": "utterance-5313"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6137.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6137.txt",
+      "source_id": "utterance-6137"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6828.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6828.txt",
+      "source_id": "utterance-6828"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3527.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3527.txt",
+      "source_id": "utterance-3527"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6341.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6341.txt",
+      "source_id": "utterance-6341"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5704.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5704.txt",
+      "source_id": "utterance-5704"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4972.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4972.txt",
+      "source_id": "utterance-4972"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5196.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5196.txt",
+      "source_id": "utterance-5196"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4679.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4679.txt",
+      "source_id": "utterance-4679"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4336.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4336.txt",
+      "source_id": "utterance-4336"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5577.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5577.txt",
+      "source_id": "utterance-5577"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3700.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3700.txt",
+      "source_id": "utterance-3700"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3726.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3726.txt",
+      "source_id": "utterance-3726"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4403.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4403.txt",
+      "source_id": "utterance-4403"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5728.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5728.txt",
+      "source_id": "utterance-5728"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5010.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5010.txt",
+      "source_id": "utterance-5010"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4066.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4066.txt",
+      "source_id": "utterance-4066"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5241.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5241.txt",
+      "source_id": "utterance-5241"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5281.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5281.txt",
+      "source_id": "utterance-5281"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6232.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6232.txt",
+      "source_id": "utterance-6232"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4229.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4229.txt",
+      "source_id": "utterance-4229"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6514.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6514.txt",
+      "source_id": "utterance-6514"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4523.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4523.txt",
+      "source_id": "utterance-4523"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5536.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5536.txt",
+      "source_id": "utterance-5536"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4825.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4825.txt",
+      "source_id": "utterance-4825"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5037.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5037.txt",
+      "source_id": "utterance-5037"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6225.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6225.txt",
+      "source_id": "utterance-6225"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5230.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5230.txt",
+      "source_id": "utterance-5230"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5218.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5218.txt",
+      "source_id": "utterance-5218"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4853.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4853.txt",
+      "source_id": "utterance-4853"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4640.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4640.txt",
+      "source_id": "utterance-4640"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6649.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6649.txt",
+      "source_id": "utterance-6649"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6011.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6011.txt",
+      "source_id": "utterance-6011"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5405.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5405.txt",
+      "source_id": "utterance-5405"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3706.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3706.txt",
+      "source_id": "utterance-3706"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6902.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6902.txt",
+      "source_id": "utterance-6902"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5550.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5550.txt",
+      "source_id": "utterance-5550"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4078.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4078.txt",
+      "source_id": "utterance-4078"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3713.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3713.txt",
+      "source_id": "utterance-3713"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5466.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5466.txt",
+      "source_id": "utterance-5466"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3799.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3799.txt",
+      "source_id": "utterance-3799"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5694.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5694.txt",
+      "source_id": "utterance-5694"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6873.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6873.txt",
+      "source_id": "utterance-6873"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4646.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4646.txt",
+      "source_id": "utterance-4646"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5934.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5934.txt",
+      "source_id": "utterance-5934"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5353.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5353.txt",
+      "source_id": "utterance-5353"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5501.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5501.txt",
+      "source_id": "utterance-5501"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6724.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6724.txt",
+      "source_id": "utterance-6724"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4065.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4065.txt",
+      "source_id": "utterance-4065"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4856.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4856.txt",
+      "source_id": "utterance-4856"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4300.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4300.txt",
+      "source_id": "utterance-4300"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5849.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5849.txt",
+      "source_id": "utterance-5849"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4768.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4768.txt",
+      "source_id": "utterance-4768"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6596.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6596.txt",
+      "source_id": "utterance-6596"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6639.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6639.txt",
+      "source_id": "utterance-6639"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4978.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4978.txt",
+      "source_id": "utterance-4978"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5631.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5631.txt",
+      "source_id": "utterance-5631"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3885.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3885.txt",
+      "source_id": "utterance-3885"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3959.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3959.txt",
+      "source_id": "utterance-3959"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6985.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6985.txt",
+      "source_id": "utterance-6985"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5903.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5903.txt",
+      "source_id": "utterance-5903"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3476.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3476.txt",
+      "source_id": "utterance-3476"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5551.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5551.txt",
+      "source_id": "utterance-5551"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3708.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3708.txt",
+      "source_id": "utterance-3708"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5723.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5723.txt",
+      "source_id": "utterance-5723"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5391.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5391.txt",
+      "source_id": "utterance-5391"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6955.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6955.txt",
+      "source_id": "utterance-6955"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3810.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3810.txt",
+      "source_id": "utterance-3810"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6071.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6071.txt",
+      "source_id": "utterance-6071"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4394.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4394.txt",
+      "source_id": "utterance-4394"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5520.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5520.txt",
+      "source_id": "utterance-5520"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6109.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6109.txt",
+      "source_id": "utterance-6109"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4828.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4828.txt",
+      "source_id": "utterance-4828"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4188.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4188.txt",
+      "source_id": "utterance-4188"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5125.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5125.txt",
+      "source_id": "utterance-5125"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3843.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3843.txt",
+      "source_id": "utterance-3843"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4283.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4283.txt",
+      "source_id": "utterance-4283"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6347.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6347.txt",
+      "source_id": "utterance-6347"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6689.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6689.txt",
+      "source_id": "utterance-6689"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4790.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4790.txt",
+      "source_id": "utterance-4790"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6497.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6497.txt",
+      "source_id": "utterance-6497"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5247.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5247.txt",
+      "source_id": "utterance-5247"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6293.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6293.txt",
+      "source_id": "utterance-6293"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6979.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6979.txt",
+      "source_id": "utterance-6979"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4983.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4983.txt",
+      "source_id": "utterance-4983"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4170.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4170.txt",
+      "source_id": "utterance-4170"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4435.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4435.txt",
+      "source_id": "utterance-4435"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5918.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5918.txt",
+      "source_id": "utterance-5918"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4584.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4584.txt",
+      "source_id": "utterance-4584"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4018.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4018.txt",
+      "source_id": "utterance-4018"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6181.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6181.txt",
+      "source_id": "utterance-6181"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6565.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6565.txt",
+      "source_id": "utterance-6565"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5054.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5054.txt",
+      "source_id": "utterance-5054"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3490.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3490.txt",
+      "source_id": "utterance-3490"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6774.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6774.txt",
+      "source_id": "utterance-6774"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5513.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5513.txt",
+      "source_id": "utterance-5513"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6752.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6752.txt",
+      "source_id": "utterance-6752"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4527.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4527.txt",
+      "source_id": "utterance-4527"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3518.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3518.txt",
+      "source_id": "utterance-3518"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4866.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4866.txt",
+      "source_id": "utterance-4866"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4553.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4553.txt",
+      "source_id": "utterance-4553"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4611.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4611.txt",
+      "source_id": "utterance-4611"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6736.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6736.txt",
+      "source_id": "utterance-6736"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5259.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5259.txt",
+      "source_id": "utterance-5259"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5059.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5059.txt",
+      "source_id": "utterance-5059"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6250.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6250.txt",
+      "source_id": "utterance-6250"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4368.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4368.txt",
+      "source_id": "utterance-4368"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3580.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3580.txt",
+      "source_id": "utterance-3580"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6106.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6106.txt",
+      "source_id": "utterance-6106"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4389.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4389.txt",
+      "source_id": "utterance-4389"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3696.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3696.txt",
+      "source_id": "utterance-3696"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6548.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6548.txt",
+      "source_id": "utterance-6548"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5681.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5681.txt",
+      "source_id": "utterance-5681"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3980.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3980.txt",
+      "source_id": "utterance-3980"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4740.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4740.txt",
+      "source_id": "utterance-4740"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4222.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4222.txt",
+      "source_id": "utterance-4222"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3806.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3806.txt",
+      "source_id": "utterance-3806"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6492.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6492.txt",
+      "source_id": "utterance-6492"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5397.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5397.txt",
+      "source_id": "utterance-5397"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5255.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5255.txt",
+      "source_id": "utterance-5255"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6677.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6677.txt",
+      "source_id": "utterance-6677"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6276.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6276.txt",
+      "source_id": "utterance-6276"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3587.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3587.txt",
+      "source_id": "utterance-3587"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4479.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4479.txt",
+      "source_id": "utterance-4479"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4424.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4424.txt",
+      "source_id": "utterance-4424"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5717.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5717.txt",
+      "source_id": "utterance-5717"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6143.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6143.txt",
+      "source_id": "utterance-6143"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5855.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5855.txt",
+      "source_id": "utterance-5855"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4557.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4557.txt",
+      "source_id": "utterance-4557"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6989.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6989.txt",
+      "source_id": "utterance-6989"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4262.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4262.txt",
+      "source_id": "utterance-4262"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4938.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4938.txt",
+      "source_id": "utterance-4938"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5768.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5768.txt",
+      "source_id": "utterance-5768"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4227.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4227.txt",
+      "source_id": "utterance-4227"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5740.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5740.txt",
+      "source_id": "utterance-5740"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3973.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3973.txt",
+      "source_id": "utterance-3973"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4195.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4195.txt",
+      "source_id": "utterance-4195"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4985.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4985.txt",
+      "source_id": "utterance-4985"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6246.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6246.txt",
+      "source_id": "utterance-6246"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5528.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5528.txt",
+      "source_id": "utterance-5528"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4168.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4168.txt",
+      "source_id": "utterance-4168"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3883.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3883.txt",
+      "source_id": "utterance-3883"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6031.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6031.txt",
+      "source_id": "utterance-6031"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5793.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5793.txt",
+      "source_id": "utterance-5793"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5089.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5089.txt",
+      "source_id": "utterance-5089"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4849.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4849.txt",
+      "source_id": "utterance-4849"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4467.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4467.txt",
+      "source_id": "utterance-4467"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5368.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5368.txt",
+      "source_id": "utterance-5368"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4096.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4096.txt",
+      "source_id": "utterance-4096"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6516.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6516.txt",
+      "source_id": "utterance-6516"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4328.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4328.txt",
+      "source_id": "utterance-4328"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5301.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5301.txt",
+      "source_id": "utterance-5301"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4680.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4680.txt",
+      "source_id": "utterance-4680"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5181.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5181.txt",
+      "source_id": "utterance-5181"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6540.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6540.txt",
+      "source_id": "utterance-6540"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6206.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6206.txt",
+      "source_id": "utterance-6206"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5033.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5033.txt",
+      "source_id": "utterance-5033"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6040.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6040.txt",
+      "source_id": "utterance-6040"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6574.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6574.txt",
+      "source_id": "utterance-6574"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5585.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5585.txt",
+      "source_id": "utterance-5585"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4861.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4861.txt",
+      "source_id": "utterance-4861"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3542.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3542.txt",
+      "source_id": "utterance-3542"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6657.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6657.txt",
+      "source_id": "utterance-6657"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6712.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6712.txt",
+      "source_id": "utterance-6712"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4996.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4996.txt",
+      "source_id": "utterance-4996"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5474.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5474.txt",
+      "source_id": "utterance-5474"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3927.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3927.txt",
+      "source_id": "utterance-3927"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4749.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4749.txt",
+      "source_id": "utterance-4749"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5492.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5492.txt",
+      "source_id": "utterance-5492"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4159.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4159.txt",
+      "source_id": "utterance-4159"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6241.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6241.txt",
+      "source_id": "utterance-6241"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5323.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5323.txt",
+      "source_id": "utterance-5323"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6444.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6444.txt",
+      "source_id": "utterance-6444"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6377.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6377.txt",
+      "source_id": "utterance-6377"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4410.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4410.txt",
+      "source_id": "utterance-4410"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4934.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4934.txt",
+      "source_id": "utterance-4934"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/5377.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\5377.txt",
+      "source_id": "utterance-5377"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/4499.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\4499.txt",
+      "source_id": "utterance-4499"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/6537.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\6537.txt",
+      "source_id": "utterance-6537"
+    },
+    {
+      "archive_member": "ISSAI_TSC_218/Test/3655.wav",
+      "has_transcript": true,
+      "reference_archive_member": "ISSAI_TSC_218\\Test\\3655.txt",
+      "source_id": "utterance-3655"
+    }
+  ],
+  "inspection_sample_count": 200,
+  "leakage_risk": "high",
+  "leakage_status": "source-disjoint blocked",
+  "numeric_utterance_id_fraction": 1.0,
+  "parent_path_groups": 3,
+  "source_id_derivation": "utterance id only; not a source group",
+  "transcript_rows": 186170
+}

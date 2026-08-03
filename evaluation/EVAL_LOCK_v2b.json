@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "lock_status": "definition_locked_materialization_pending",
+  "files": {
+    "evaluation/suite_v2b.json": "80b784cfb5c49464345ed1a901fcfad7943f6c1aacc1c6176fd4f14d7c639b36",
+    "src/whisper_arge/evaluation_v2.py": "78dcfb958e2bdd496f19f6c7dbbce71acc93d93817e876b5794dd3629817c2e1",
+    "src/whisper_arge/metrics_v2.py": "48092d006d99dad7ed4caefe8aed7f3bc1d61c80747ddeb63af04bbb5167f4a7"
+  },
+  "pending_before_real_experiments": ["All core manifests/audio SHA-256", "A0 prediction and metrics SHA-256", "bootstrap reports"],
+  "rule": "Pending lock forbids LoRA training."
+}

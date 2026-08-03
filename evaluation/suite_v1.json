@@ -1,0 +1,66 @@
+{
+  "id": "tr_multidomain_eval_v1",
+  "status": "definition_locked_materialization_pending",
+  "language": "tr",
+  "selection": {
+    "algorithm": "sha256(dataset_id + revision + split + stable_source_id + seed), ascending",
+    "seed": 20260730,
+    "smoke_samples_per_clean_domain": 20,
+    "selection_samples_per_clean_domain": 120,
+    "full_tier": "all eligible test rows"
+  },
+  "clean_domains": [
+    "common_voice_clean",
+    "mediaspeech_clean",
+    "fleurs_clean",
+    "khan_clean",
+    "khan_math_clean"
+  ],
+  "degraded_domains": [
+    "common_voice_phone",
+    "common_voice_codec",
+    "mediaspeech_phone",
+    "mediaspeech_codec"
+  ],
+  "degraded_copy_contract": {
+    "sources": ["common_voice_clean", "mediaspeech_clean"],
+    "same_sample_ids_as_clean_source": true,
+    "phone": {
+      "sample_rate_hz": 8000,
+      "highpass_hz": 300,
+      "lowpass_hz": 3400,
+      "return_sample_rate_hz": 16000
+    },
+    "codec": {
+      "codec": "g711_mulaw",
+      "sample_rate_hz": 8000,
+      "return_sample_rate_hz": 16000
+    },
+    "randomness": "none"
+  },
+  "decode_contract": {
+    "model": "openai/whisper-large-v3-turbo",
+    "model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "language": "tr",
+    "task": "transcribe",
+    "num_beams": 1,
+    "do_sample": false,
+    "condition_on_prev_tokens": false,
+    "max_new_tokens": 448
+  },
+  "metrics": {
+    "implementation": "corpus_wer_cer_v1",
+    "normalizer": "tr_basic_v1",
+    "reported": ["raw_wer", "raw_cer", "normalized_wer", "normalized_cer"],
+    "primary": "macro_domain_normalized_wer",
+    "averaging": "unweighted macro across domains after corpus-level per-domain scoring"
+  },
+  "acceptance": {
+    "macro_normalized_wer_delta_max": -0.005,
+    "clean_negative_transfer_mean_max": 0.003,
+    "clean_negative_transfer_any_domain_max": 0.01,
+    "required_domains": 9,
+    "rule": "All thresholds must pass; one-domain gains are insufficient."
+  }
+}
+

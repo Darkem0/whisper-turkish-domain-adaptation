@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "lock_status": "pending_baseline_calibration",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "files": {
+    "evaluation/acceptance_v2.json": "47fc858a2145c1d7ad465ffb80a726a92d35968b89cc1d2c20cb34ba78551932"
+  },
+  "pending_before_finalization": [
+    "A0 base result and bootstrap variance review",
+    "Numeric acceptance thresholds",
+    "Final EVAL_LOCK_v2 materialized artifact hashes"
+  ],
+  "rule": "Pending lock rejects every training reservation."
+}

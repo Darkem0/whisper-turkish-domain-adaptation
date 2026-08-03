@@ -1,0 +1,16 @@
+{
+  "audio_exact_duplicate_pairs": 0,
+  "audio_near_duplicate_method": "SHA-256 exact-audio collision scan only; acoustic embedding unavailable",
+  "conclusion": "feasibility audit only; it does not establish source or speaker disjointness",
+  "derived_acoustic_cluster_id": null,
+  "sample_limit": 10000,
+  "sampled_rows": 10000,
+  "speaker_embedding_cluster_method": "not inferred; no source/speaker metadata or embedding backend",
+  "transcript_exact_duplicate_pairs": 6,
+  "transcript_near_duplicate_method": "normalized exact match only; lexical near-duplicate model not run",
+  "utterance_id_adjacency": {
+    "bucket_size": 10,
+    "max_bucket_count": 5,
+    "nonempty_buckets": 7900
+  }
+}

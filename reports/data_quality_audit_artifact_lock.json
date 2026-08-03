@@ -1,0 +1,13 @@
+{
+  "reports\\data_quality_audio_text_mismatch_candidates.csv": "376b8a899b77b8f2bf93fad86b457dcd9f063cfda7f9414c7b20231dd2745dda",
+  "reports\\data_quality_audit_reproducibility.json": "76fc8b9e6490dc5151e5e3c82186c7e2712f5da4e95b5854e8b6e088584667a9",
+  "reports\\data_quality_automatic_audit.md": "152413931334242986108d8596afb894fbf6e75568a427a0237b01580374229c",
+  "reports\\data_quality_distribution_summary.csv": "d2613bfdb599df70fee66ce24a04e7b08e2d6574a34bd73f666661c27aa79af1",
+  "reports\\data_quality_duplicate_audio_report.csv": "ea8ff5a8f6e28bf5cc69b0ed9ed474f0090d6fa2ef5958150eb43ac6aee1bacc",
+  "reports\\data_quality_duplicate_transcript_report.csv": "8f34c38779b3b3babd967ec1fb9c6ac4b1bf4d34eee8f962d6e7407d60b8c49c",
+  "reports\\data_quality_issue_rows.jsonl": "406bf4613fcba4ae3612b550ce736efb6db702385ff00c7dc2b4bf59dfc44a15",
+  "reports\\data_quality_issue_summary.csv": "ed9a46e886c80b03c1deaec44ab19fc31a30065526ee1debad77a24424cb202b",
+  "reports\\data_quality_manual_review_sample.jsonl": "d263b945fc13230ca36b81b4955db4bba598ce1a1a88cfec1c80cfe4a1f1fb92",
+  "reports\\data_quality_manual_review_sampling_plan.md": "bc77840fedc0ba24903e2b2bac0ee048440faa9fb56684951ded71d680020d10",
+  "reports\\data_quality_representation_analysis.md": "8dfd6b4e657a364fb36ad976aa739879c1bd04936c07b3da4952963795d4f4f4"
+}

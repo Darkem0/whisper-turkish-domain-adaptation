@@ -1,0 +1,4 @@
+{"sample_id":"cv-1","domain":"common_voice_clean","domain_group":"clean","audio":"fixture/cv-1.wav","audio_sha256":"0000000000000000000000000000000000000000000000000000000000000000","reference":"İki güzel örnek","dataset_id":"fixture/cv","dataset_revision":"abc123","split":"test"}
+{"sample_id":"cv-2","domain":"common_voice_clean","domain_group":"clean","audio":"fixture/cv-2.wav","audio_sha256":"1111111111111111111111111111111111111111111111111111111111111111","reference":"Ankara'da hava açık","dataset_id":"fixture/cv","dataset_revision":"abc123","split":"test"}
+{"sample_id":"phone-1","domain":"common_voice_phone","domain_group":"degraded","audio":"fixture/phone-1.wav","audio_sha256":"2222222222222222222222222222222222222222222222222222222222222222","reference":"Kırk iki lira","dataset_id":"fixture/cv-derived-phone","dataset_revision":"abc123+phone-v1","split":"test"}
+

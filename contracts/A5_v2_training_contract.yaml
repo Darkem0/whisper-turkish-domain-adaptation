@@ -1,0 +1,14 @@
+{
+  "contract_id": "A5_v2_encoder_only_zero_replay_training_contract",
+  "status": "READY_FOR_A5_V2_RESOURCE_SMOKE",
+  "blocker": null,
+  "matrix_definition": {"id": "A5_v2_encoder_only_zero_replay", "parent": "A4_v2_matched_ablation", "hypothesis": "Encoder-only zero-replay adaptation isolates layer scope against A4 decoder-only zero-replay.", "diagnostic_only": true, "automatic_promotion": false},
+  "identity": {"base_model": "openai/whisper-large-v3-turbo", "base_model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "processor_tokenizer_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "tokenizer_processor_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"},
+  "initialization": {"mode": "fresh_base", "parent_adapter": null, "parent_weights_loaded": false, "adapter_loading": "DISABLED_A2_A3_A4", "legacy_resume": "FORBIDDEN: A3_legacy_aborted_step34_invalid"},
+  "lora": {"scope": "encoder-only", "target_modules": ["q_proj", "v_proj"], "rank": 16, "alpha": 32, "dropout": 0.05, "expected_trainable_parameter_count": 2621440},
+  "optimization": {"dtype": "fp16", "gradient_checkpointing": true, "per_device_batch_size": 1, "gradient_accumulation_steps": 16, "effective_batch_size": 16, "optimizer": "AdamW", "learning_rate": 0.00001, "betas": [0.9, 0.999], "weight_decay": 0.01, "scheduler": "linear", "warmup_steps": 20, "max_steps": 200, "seed": 20260730, "checkpoint_and_eval_steps": [50, 100, 150, 200]},
+  "data": {"train_manifest": "data/materialized/training_a5_v2/a5_train_manifest.jsonl", "validation_manifest": "data/materialized/training_a4_v2/a4_validation_manifest.jsonl", "replay_manifest": "data/materialized/training_a5_v2/a5_replay_manifest.jsonl", "schedule": "data/materialized/training_a5_v2/a5_sample_schedule.jsonl", "replay_ratio": 0.0, "replay_rows": 0},
+  "resume_policy": "Only a verified A5 checkpoint from this exact contract may resume; never A3 legacy or A2/A3/A4 checkpoint.",
+  "promotion": {"diagnostic_only": true, "production_promotion_allowed": false},
+  "resources": {"vram_limit_mib": 12282, "smoke_steps": 2, "smoke_microbatches": 32, "reserved_vram_gate_mib": 10000}
+}

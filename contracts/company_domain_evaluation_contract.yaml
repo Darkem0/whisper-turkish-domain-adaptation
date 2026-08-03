@@ -1,0 +1,66 @@
+{
+  "contract_id": "company_domain_evaluation_contract",
+  "status": "BLOCKED_COMPANY_DOMAIN_AUTHORIZATION",
+  "purpose": "compare A0/A2/A3/A4/A5/A6 candidates on real authorized company calls; no training",
+  "candidate_lock": "contracts/company_domain_candidate_lock.json",
+  "data_lock": "contracts/company_domain_data_manifest.lock.json",
+  "annotation_policy": "contracts/company_domain_annotation_policy.yaml",
+  "privacy_policy": "contracts/company_domain_privacy_policy.yaml",
+  "split_policy": {
+    "unit_priority": [
+      "customer_or_speaker_hash",
+      "call_id",
+      "recording_id",
+      "source_recording_group",
+      "agent_hash",
+      "project_or_activity_group",
+      "stable_source_hash"
+    ],
+    "development_and_final_holdout": "must be physically disjoint; one population may not be silently reused",
+    "agent_repeat_analysis": "required",
+    "channel_analysis": "agent/customer/stereo only when authorized metadata exists"
+  },
+  "metrics": {
+    "asr": [
+      "normalized_wer",
+      "raw_wer",
+      "normalized_cer",
+      "raw_cer",
+      "call_macro_wer",
+      "duration_weighted_wer",
+      "median_call_segment_wer",
+      "deletion_rate",
+      "insertion_rate",
+      "substitution_rate"
+    ],
+    "critical_behavior": [
+      "empty_output",
+      "hallucination",
+      "repetition_loop",
+      "overlong_output",
+      "unsupported_insertion",
+      "wrong_language",
+      "boundary_loss",
+      "channel_mixing",
+      "catastrophic_numeric_error"
+    ],
+    "entity_metrics": "NOT_EVALUATED until authorized annotations exist"
+  },
+  "statistics": {
+    "paired": true,
+    "ci": "paired bootstrap WER/CER; call-level and channel-specific CI",
+    "multiple_comparisons": "report all prespecified comparisons; do not select by unadjusted mean alone",
+    "small_subsets": "insufficient_sample warning"
+  },
+  "selection_priority": [
+    "no critical operational errors",
+    "customer channel",
+    "agent channel",
+    "numbers/amounts/dates/names",
+    "call macro WER",
+    "telephone robustness",
+    "latency/resources"
+  ],
+  "open_data_policy": "CV Scripted/FLEURS are monitoring only, not company-selection hard gates",
+  "thresholds": "MISSING: business owner, ASR reviewer and model owner authorization required before any threshold is set"
+}

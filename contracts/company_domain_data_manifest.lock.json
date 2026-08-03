@@ -1,0 +1,17 @@
+{
+  "contract_id": "company_domain_data_manifest_lock",
+  "status": "BLOCKED_COMPANY_DOMAIN_AUTHORIZATION",
+  "authorized_data_roots": [],
+  "manifests": [],
+  "missing_required_inputs": [
+    "authorized company-data root or manifest",
+    "data-owner authorization/provenance record",
+    "human-written or human-verified reference transcripts",
+    "secure internal sample identifiers and grouping metadata",
+    "call/customer/recording identity hashes for leakage-safe split",
+    "channel metadata for agent/customer/stereo",
+    "dev and final-holdout separation",
+    "annotation QA/reviewer metadata"
+  ],
+  "prohibition": "No company audio, transcript, manifest, path or hash is materialized or inferred by this contract."
+}

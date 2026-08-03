@@ -1,0 +1,27 @@
+{
+  "id": "tr_target_proxy_eval_v2a",
+  "status": "definition_locked_materialization_pending",
+  "supersedes": "evaluation/suite_v2.json",
+  "language": "tr",
+  "acceptance_core": {
+    "domains": ["mediaspeech_test", "cv_spontaneous_holdout", "cv_scripted_test", "fleurs_tr_tr_test"],
+    "robustness": ["mediaspeech_clean_to_phone", "mediaspeech_clean_to_g711_mulaw"],
+    "metrics": ["raw_wer", "raw_cer", "normalized_wer", "normalized_cer"],
+    "cv_spontaneous_metrics": ["disfluency_precision", "disfluency_recall", "disfluency_f1"],
+    "split_contract": {"mediaspeech": "official_test", "cv_spontaneous": "speaker_disjoint_holdout", "cv_scripted": "official_test", "fleurs_tr_tr": "official_test"}
+  },
+  "tsc_exploratory": {
+    "training_pool": true,
+    "official_test_exploratory": true,
+    "primary_acceptance": false,
+    "source_disjoint": false,
+    "speaker_disjoint": false,
+    "grouping_quality": "utterance_only",
+    "leakage_risk": "unknown_high",
+    "tiers": {"smoke": {"duration_hours": 1, "nested_in": "selection"}, "selection": {"duration_hours": 5, "nested_in": "full"}, "full": {"duration_hours": 10}},
+    "split": "official_utterance_split",
+    "use_for_acceptance": false
+  },
+  "statistics": {"confidence_interval": 0.95, "bootstrap_replicates": 2000, "resampling_unit": "speaker blocks for CV Spontaneous; paired examples for MediaSpeech degradation; sample blocks otherwise", "seed": 20260730},
+  "decode_contract": {"model": "openai/whisper-large-v3-turbo", "model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "language": "tr", "task": "transcribe", "num_beams": 1, "do_sample": false, "condition_on_prev_tokens": false, "max_new_tokens": 448}
+}

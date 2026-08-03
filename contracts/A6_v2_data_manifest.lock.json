@@ -1,0 +1,48 @@
+{
+  "contract_id": "A6_v2_encoder_decoder_zero_replay_data_manifest_lock",
+  "schema_version": 1,
+  "status": "READY_FOR_A6_V2_RESOURCE_SMOKE",
+  "authoritative_lineage": "A5_cleaned_population_and_exact_schedule",
+  "materialized": {
+    "train": {
+      "reference_type": "immutable_external_reference",
+      "path": "data/materialized/training_a5_v2/a5_train_manifest.jsonl",
+      "sha256": "452e602bcf025c416e52e023ecd1fc1d6e5dcdd9f6512fd863c9063c390fa16e",
+      "rows": 172231,
+      "copy_created": false
+    },
+    "validation": {
+      "reference_type": "immutable_external_reference",
+      "path": "data/materialized/training_a4_v2/a4_validation_manifest.jsonl",
+      "sha256": "864e801656175b9dc515f52d2852f1a740d2d88224ee4801fcd45806f4c09976",
+      "rows": 9081,
+      "copy_created": false
+    },
+    "replay": {
+      "reference_type": "immutable_external_reference",
+      "path": "data/materialized/training_a5_v2/a5_replay_manifest.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0,
+      "copy_created": false
+    },
+    "schedule": {
+      "reference_type": "immutable_external_reference",
+      "path": "data/materialized/training_a5_v2/a5_sample_schedule.jsonl",
+      "sha256": "dd277700c6d1052d12937ee523b874d6a7054c010602df913e8ffb6363acc570",
+      "rows": 3200,
+      "copy_created": false
+    }
+  },
+  "expected": {
+    "train_rows": 172231,
+    "validation_rows": 9081,
+    "schedule_rows": 3200,
+    "acoustic_microbatches": 3200,
+    "replay_microbatches": 0,
+    "empty_transcript_schedule_exposure": 0
+  },
+  "leakage_audit": {
+    "audio_overlap": 0,
+    "group_overlap": 0
+  }
+}

@@ -1,0 +1,13 @@
+experiment,issue_rows_in_schedule,issue_type,microbatch_percent,sample_id_matching,schedule_path,schedule_status,total_microbatches,uses
+A2,0,empty_transcript_train,0.0,EXACT,data\materialized\training_v2d\sample_schedule_v2d_200.jsonl,PRESENT,3200,0
+A2,0,duplicate_transcript_train,0.0,EXACT,data\materialized\training_v2d\sample_schedule_v2d_200.jsonl,PRESENT,3200,0
+A2,0,duplicate_transcript_validation,0.0,EXACT,data\materialized\training_v2d\sample_schedule_v2d_200.jsonl,PRESENT,3200,0
+A2,0,placeholder_validation,0.0,EXACT,data\materialized\training_v2d\sample_schedule_v2d_200.jsonl,PRESENT,3200,0
+A3_v2,0,empty_transcript_train,0.0,EXACT,data\materialized\training_a3_v2\a3_sample_schedule_200.jsonl,PRESENT,3200,0
+A3_v2,40,duplicate_transcript_train,1.25,EXACT,data\materialized\training_a3_v2\a3_sample_schedule_200.jsonl,PRESENT,3200,40
+A3_v2,0,duplicate_transcript_validation,0.0,EXACT,data\materialized\training_a3_v2\a3_sample_schedule_200.jsonl,PRESENT,3200,0
+A3_v2,0,placeholder_validation,0.0,EXACT,data\materialized\training_a3_v2\a3_sample_schedule_200.jsonl,PRESENT,3200,0
+A4_v2,7,empty_transcript_train,1.625,EXACT,data\materialized\training_a4_v2\a4_sample_schedule.jsonl,PRESENT,3200,52
+A4_v2,28,duplicate_transcript_train,0.875,EXACT,data\materialized\training_a4_v2\a4_sample_schedule.jsonl,PRESENT,3200,28
+A4_v2,0,duplicate_transcript_validation,0.0,EXACT,data\materialized\training_a4_v2\a4_sample_schedule.jsonl,PRESENT,3200,0
+A4_v2,0,placeholder_validation,0.0,EXACT,data\materialized\training_a4_v2\a4_sample_schedule.jsonl,PRESENT,3200,0

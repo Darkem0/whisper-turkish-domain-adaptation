@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "lock_status": "definition_locked_materialization_pending",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "files": {
+    "data/registry_v2.json": "8624df23def44df1d6833a31c63ff016d82cb12c6292c7e9fc36e86def7e813b",
+    "evaluation/suite_v2.json": "1a8eb5e677763b00a4901bc409486c043899ff564b8c256c35d21ed82af30b8d",
+    "src/whisper_arge/bootstrap.py": "bdf6d4eea2323d032f9479163254a35349dcdea33150b9eb9918b1a7a968c559",
+    "src/whisper_arge/materialize.py": "170325bbe48c9faccac8b705bc64e12202d0964dca69a0c3e64beafd9d554f66",
+    "src/whisper_arge/inference.py": "c9601ed1db17b1527e1a4b1f513579c468a62efccedef30824ac89f0235f1ba2",
+    "src/whisper_arge/metrics_v2.py": "48092d006d99dad7ed4caefe8aed7f3bc1d61c80747ddeb63af04bbb5167f4a7",
+    "src/whisper_arge/evaluation_v2.py": "78dcfb958e2bdd496f19f6c7dbbce71acc93d93817e876b5794dd3629817c2e1",
+    "src/whisper_arge/calibration.py": "50c20d5d976d5d07b82b01d7c70544ff8fb3fcf231ac42dcb1d8dd2eb1a22c8a",
+    "src/whisper_arge/tsc.py": "ce7a026c3fbd84d00e90cd0bff90743812c76c1e476cd3d192743cebfc2ed20a"
+  },
+  "pending_before_real_experiments": [
+    "Pinned revision and license-clearance evidence for TSC",
+    "Source manifest, materialized audio and output manifest SHA-256 values",
+    "TSC archive-size, required-space and free-space preflight",
+    "Base prediction-cache and metric-report SHA-256 values",
+    "Resolved training manifest excluding speaker/source holdouts"
+  ],
+  "rule": "Pending status forbids training and promotion. Complete materialization must create a new lock artifact; it must never overwrite v1."
+}

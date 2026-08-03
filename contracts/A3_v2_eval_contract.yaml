@@ -1,0 +1,87 @@
+{
+  "a2_gate_policy": "A2 promotion failure does not permit a relaxed A3 promotion gate.",
+  "acceptance_lock": {
+    "path": "evaluation/ACCEPTANCE_LOCK_v2d.json",
+    "sha256": "4f16db1738d6ab7e5ead08f894d5951718d621ad5fcef3a161f284b0fce9ee62"
+  },
+  "baseline": {
+    "condition": "A0",
+    "required_comparison": true
+  },
+  "checkpoint_policy": {
+    "automatic_best_checkpoint_promotion": false,
+    "evaluate_steps": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "normalization": "Use the existing frozen evaluation code and normalization lock."
+  },
+  "contract_id": "A3_v2_eval_contract",
+  "evaluation_lock": {
+    "path": "evaluation/EVAL_LOCK_v2d.json",
+    "sha256": "410c01e8ed262fc3312ff954a8970390a8289b3e9ee5fb449d1798f9b1f18b2b"
+  },
+  "frozen_sets": [
+    {
+      "name": "mediaspeech_paired",
+      "path": "data/materialized/mediaspeech_v2d/paired/mediaspeech_holdout_paired_v2d.jsonl",
+      "rows": 1479,
+      "sha256": "89ad4452b97f1b462516b3aca7ea85d0a390c88d16c9d0f386b942adc5c734da"
+    },
+    {
+      "name": "cv_scripted",
+      "path": "data/materialized/hf_v2d/cv_scripted_test_v2d.jsonl",
+      "rows": 9650,
+      "sha256": "3e61f5c50744d401e4a6d6ef8bda4414d84d7561eeb027e5ebf7ec37f4975ce6"
+    },
+    {
+      "name": "fleurs",
+      "path": "data/materialized/fleurs_tr_v2d/fleurs_tr_test_v2d.jsonl",
+      "rows": 743,
+      "sha256": "e94f2e096b326710a1a25d988a7a3f15b5ad385790ccf7d5439a3b152147a222"
+    },
+    {
+      "name": "cv_spontaneous_holdout",
+      "path": "data/materialized/cv_spontaneous_v2c/cv_spontaneous_holdout_v2c.jsonl",
+      "rows": 11,
+      "sha256": "f6a8f4c497e89d383c9ec63c1b203eccbbec8db59cf184cc3d72521cc2d88d4e"
+    },
+    {
+      "name": "tsc_exploratory",
+      "path": "data/materialized/tsc_v2a/tsc_full_v2a.jsonl",
+      "rows": 3484,
+      "sha256": "6fb4a6c71a34649ed0dc49b62ff0a7d9047331de55a5c9b51c00aa8ac90b4f5b"
+    }
+  ],
+  "immutable_registry": {
+    "path": "protocols/immutable_test_registry.json",
+    "sha256": "5836c44a442cf16e0243ce2bf078f206f9c7d3f43f949dc4f32d41fa9020ed6a"
+  },
+  "promotion_gates": {
+    "must_pass": [
+      "domain_robustness delta_vs_a0_max=-0.010",
+      "domain_robustness bootstrap_ci_upper_must_be_below_zero=true",
+      "fleurs maximum_absolute_regression=0.005",
+      "common_voice_scripted maximum_absolute_regression=0.005",
+      "hallucination maximum_relative_increase=0.20",
+      "repetition maximum_relative_increase=0.20",
+      "reproducibility minimum_passing_seeds=2 of total_seeds=3"
+    ],
+    "source": "protocols/promotion_gates.yaml"
+  },
+  "rollback_conditions": [
+    "any immutable-file hash mismatch",
+    "train/eval leakage",
+    "missing prediction or metric artifact",
+    "any promotion-gate failure",
+    "non-finite training value",
+    "VRAM OOM",
+    "incomplete 200-step run",
+    "attempted legacy resume"
+  ],
+  "rule": "Evaluation inputs are read-only; no A3_v2 run may modify evaluation/ or protocols/immutable_test_registry.json.",
+  "schema_version": 1,
+  "status": "FROZEN_READY_FOR_RESOURCE_SMOKE"
+}
