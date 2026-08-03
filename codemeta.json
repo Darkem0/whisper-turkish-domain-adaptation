@@ -1,0 +1,66 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Whisper Large-v3-Turbo Turkish Domain Adaptation",
+  "alternateName": "Turkish Telephone-Like Whisper Adaptation Research Hub",
+  "description": "Reproducible Turkish telephone-like speech adaptation research for openai/whisper-large-v3-turbo, including Legacy experiments, controlled A0-A7 LoRA studies, public metrics, negative results, final Turkish and English manuscripts, and commit-pinned companion components.",
+  "codeRepository": "https://github.com/Darkem0/whisper-turkish-domain-adaptation",
+  "issueTracker": "https://github.com/Darkem0/whisper-turkish-domain-adaptation/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Emre",
+      "familyName": "Aslan",
+      "@id": "https://orcid.org/0009-0006-0291-0683"
+    }
+  ],
+  "programmingLanguage": [
+    "Python",
+    "PowerShell",
+    "Markdown"
+  ],
+  "runtimePlatform": [
+    "CPython 3.10+",
+    "PyTorch",
+    "Hugging Face Transformers",
+    "PEFT/LoRA"
+  ],
+  "operatingSystem": [
+    "Windows",
+    "Linux"
+  ],
+  "applicationCategory": "Automatic speech recognition research",
+  "developmentStatus": "active",
+  "dateCreated": "2026-07-22",
+  "dateModified": "2026-08-03",
+  "version": "1.0.0",
+  "keywords": [
+    "Whisper",
+    "whisper-large-v3-turbo",
+    "Turkish ASR",
+    "Turkish speech recognition",
+    "telephone speech",
+    "call-center speech",
+    "domain adaptation",
+    "LoRA",
+    "PEFT",
+    "staged domain adaptation",
+    "negative transfer",
+    "WER",
+    "CER",
+    "speech-to-text",
+    "audio processing",
+    "reproducible research"
+  ],
+  "referencePublication": [
+    "https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/paper/final_manuscript_tr.md",
+    "https://github.com/Darkem0/whisper-turkish-domain-adaptation/blob/main/paper/final_manuscript_en.md"
+  ],
+  "relatedLink": [
+    "https://github.com/Darkem0/turkish-speech-processing-platform",
+    "https://github.com/Darkem0/contact-center-ai-evaluation-suite",
+    "https://github.com/Darkem0/research-publications",
+    "https://github.com/Darkem0/applied-ai-engineering-portfolio"
+  ]
+}
