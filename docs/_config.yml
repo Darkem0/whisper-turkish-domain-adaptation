@@ -1,0 +1,17 @@
+title: "Turkish Whisper Large-v3-Turbo Domain Adaptation"
+description: "Reproducible Turkish telephone-like speech adaptation research: LoRA scope, staged domain adaptation, negative transfer, decoding, metrics, and A0-A7 experiments."
+lang: tr-TR
+url: "https://darkem0.github.io"
+baseurl: "/whisper-turkish-domain-adaptation"
+repository: "Darkem0/whisper-turkish-domain-adaptation"
+author:
+  name: "Emre Aslan"
+  url: "https://github.com/Darkem0"
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+header_pages:
+  - index.md
+  - what_worked_what_failed_simple.md
+  - a7_real_data_fast_path.md
