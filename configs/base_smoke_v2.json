@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "recipe_id": "target_proxy_lora_canonical_a2_v2",
+  "model": "openai/whisper-large-v3-turbo",
+  "dataset_registry": "data/registry_v2.json",
+  "dataset_manifest": "data/materialized/train_v2.jsonl",
+  "dataset_manifest_sha256": "MATERIALIZE_BEFORE_RUN",
+  "evaluation_lock": "evaluation/EVAL_LOCK_v2.json",
+  "evaluation_lock_sha256": "MATERIALIZE_BEFORE_RUN",
+  "acceptance_lock": "evaluation/ACCEPTANCE_LOCK_v2.json",
+  "acceptance_lock_sha256": "MATERIALIZE_BEFORE_RUN",
+  "seed": 20260730,
+  "training": {
+    "budget_steps": 200,
+    "precision": "fp16",
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "quantization": "none_by_default",
+    "lora": {"method": "lora", "scope": "encoder+decoder", "target_modules": ["q_proj", "v_proj"], "rank": 16, "alpha": 32, "dropout": 0.05},
+    "sampling": {
+      "clean_replay_ratio": 0.0,
+      "target_ratios": {"tsc": 0.6316, "mediaspeech": 0.3158, "cv_spontaneous_train": 0.0526},
+      "replay_ratios": {"cv_scripted": 0.7, "fleurs": 0.3},
+      "cv_spontaneous_max_repeats_per_source": 3,
+      "speaker_holdout_exclusion": true
+    },
+    "augmentation": {"kind": "none", "probability": 0.0}
+  }
+}

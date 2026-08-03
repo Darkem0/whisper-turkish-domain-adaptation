@@ -1,0 +1,17 @@
+{
+  "contract_id": "A5_v2.phone_augmentation",
+  "prohibited_legacy_resume": "A3_legacy_aborted_step34_invalid",
+  "reasons": [
+    "A2 full resolved training configuration path",
+    "A2 target/replay manifest and SHA-256",
+    "A2 optimizer step count and optimizer-state provenance",
+    "A2 exact source-data/replay ratios and seed evidence",
+    "no repository artifact proves a pre-validated phone augmentation recipe for this exact series"
+  ],
+  "schema_version": 1,
+  "smoke_result": "runs/SMOKE_D0/result.json",
+  "source_artifact_lock": "runs/A2_v2d_eval/a2_artifact_lock_v2d.json",
+  "source_artifact_lock_exists": true,
+  "validated_at": "2026-07-31T09:21:48.787169+00:00",
+  "validation": "INVALID"
+}

@@ -163,6 +163,21 @@ python -m unittest discover -s tests -v
 
 Bu komutlar model indirmez ve tarihsel A0–A7 metriklerini yeniden üretme iddiası taşımaz. Varsayılan fixture, araştırma sözleşmesini ve metric kodunu gösterir.
 
+Tam yerel araştırma paketi, sözleşmeler ve artefakt-doğrulamalı raporlar da bu
+kanonik geçmişte korunur:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest
+python -m whisper_arge.cli verify-eval-lock
+```
+
+- [A0–A7 otoritatif metrik özeti](reports/authoritative_metrics_summary.md)
+- [Araştırma deney defteri](reports/research_experiment_ledger.md)
+- [Yeniden üretilebilirlik ve hata kaydı](reports/final_reproducibility_and_failures.md)
+- [Çalıştırma sözleşmeleri](contracts/)
+- [Araştırma otomasyonu ve denetim betikleri](scripts/)
+
 ## Arama motoru ve yapay zekâ keşfedilebilirliği
 
 Repo, insanlar ve makine okuyucuları için şu girişleri içerir:

@@ -1,0 +1,7 @@
+{
+  "schema_version": 2,
+  "status": "pending_baseline_calibration",
+  "prerequisites": ["A0 base prediction cache", "A0 per-domain corpus metrics", "paired/source/speaker-blockwise bootstrap variance", "finalized EVAL_LOCK_v2", "finalized ACCEPTANCE_LOCK_v2"],
+  "thresholds": null,
+  "rule": "No training, automatic promotion, model publication, adapter publication or company use is authorized while status is pending_baseline_calibration."
+}

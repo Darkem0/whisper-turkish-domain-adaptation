@@ -1,0 +1,14 @@
+domain_robustness:
+  delta_vs_a0_max: -0.010
+  bootstrap_ci_upper_must_be_below_zero: true
+fleurs:
+  maximum_absolute_regression: 0.005
+common_voice_scripted:
+  maximum_absolute_regression: 0.005
+hallucination:
+  maximum_relative_increase: 0.20
+repetition:
+  maximum_relative_increase: 0.20
+reproducibility:
+  minimum_passing_seeds: 2
+  total_seeds: 3

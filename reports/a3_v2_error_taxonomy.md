@@ -1,0 +1,90 @@
+# A3_v2 prediction error taxonomy
+
+{
+  "A0": {
+    "samples": 9650,
+    "substitutions": 5729,
+    "insertions": 1431,
+    "deletions": 1536,
+    "repeated_ngram": 142,
+    "non_turkish_or_unicode": 62,
+    "too_short": 18,
+    "suspicious_repetition": 58,
+    "too_long": 7,
+    "possible_hallucination": 3,
+    "empty_output": 1,
+    "reference_prediction_word_ratio": 0.9921237290562795,
+    "normalized_wer": 0.15560526080343562
+  },
+  "A2": {
+    "samples": 9650,
+    "substitutions": 5623,
+    "insertions": 1420,
+    "deletions": 1546,
+    "repeated_ngram": 145,
+    "non_turkish_or_unicode": 61,
+    "too_short": 19,
+    "suspicious_repetition": 60,
+    "too_long": 7,
+    "empty_output": 3,
+    "possible_hallucination": 3,
+    "reference_prediction_word_ratio": 0.9959007589861091,
+    "normalized_wer": 0.1536906146550953
+  },
+  "step-050": {
+    "samples": 9650,
+    "substitutions": 5477,
+    "insertions": 6174,
+    "deletions": 1500,
+    "repeated_ngram": 173,
+    "non_turkish_or_unicode": 62,
+    "too_long": 35,
+    "suspicious_repetition": 88,
+    "possible_hallucination": 33,
+    "too_short": 8,
+    "reference_prediction_word_ratio": 1.0415652298439066,
+    "normalized_wer": 0.2353225373534938
+  },
+  "step-100": {
+    "samples": 9650,
+    "substitutions": 5470,
+    "insertions": 5825,
+    "deletions": 1508,
+    "repeated_ngram": 172,
+    "non_turkish_or_unicode": 62,
+    "too_long": 34,
+    "suspicious_repetition": 87,
+    "possible_hallucination": 32,
+    "too_short": 6,
+    "reference_prediction_word_ratio": 1.0418337390806243,
+    "normalized_wer": 0.22909546389907848
+  },
+  "step-150": {
+    "samples": 9650,
+    "substitutions": 5449,
+    "insertions": 5362,
+    "deletions": 1508,
+    "repeated_ngram": 172,
+    "non_turkish_or_unicode": 60,
+    "too_long": 31,
+    "suspicious_repetition": 87,
+    "possible_hallucination": 30,
+    "too_short": 6,
+    "reference_prediction_word_ratio": 1.033563654589718,
+    "normalized_wer": 0.22043482150845486
+  },
+  "step-200": {
+    "samples": 9650,
+    "substitutions": 5454,
+    "insertions": 5291,
+    "deletions": 1513,
+    "repeated_ngram": 170,
+    "non_turkish_or_unicode": 60,
+    "too_long": 31,
+    "suspicious_repetition": 86,
+    "possible_hallucination": 29,
+    "too_short": 6,
+    "reference_prediction_word_ratio": 1.032203207790348,
+    "normalized_wer": 0.2193432942650085
+  }
+}

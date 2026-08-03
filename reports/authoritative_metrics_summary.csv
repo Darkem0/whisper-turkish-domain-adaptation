@@ -1,0 +1,6 @@
+model,checkpoint,dataset,normalized_wer
+A7,step-200,mediaspeech_phone,0.15428452289943706
+A7,step-150,robustness_proxy,0.14757801098061019
+A2,base,mediaspeech_phone,0.170825
+A4,step-050,mediaspeech_phone,0.158385
+A6,step-200,mediaspeech_phone,0.157203

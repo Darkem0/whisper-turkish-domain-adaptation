@@ -1,0 +1,5 @@
+issue_type,severity,evidence,affected_rows,affected_duration,prevalence_percent,train_or_validation,likely_model_effect,confidence,recommended_action
+empty_transcript,critical,7 rows,7,142.272,0.00406,train,invalid supervision,confirmed,exclude or correct only after human verification
+duplicate_transcript_cluster,medium,717 normalized-text clusters,1795,4344.896,1.04216,train,template overrepresentation or leakage,strong_signal,review clusters and group-aware sampling
+placeholder_annotation_token,medium,2 rows,2,62.244,0.02202,validation,annotation leakage,strong_signal,manual review
+duplicate_transcript_cluster,medium,14 normalized-text clusters,30,71.82,0.33036,validation,template overrepresentation or leakage,strong_signal,review clusters and group-aware sampling

@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "lock_status": "pending_baseline_calibration",
+  "files": {"evaluation/acceptance_v2b.json": "306841a5e1c6624ce92d950d4e27ebbb1812bc6559a94c42f437cd80dbf89d37"},
+  "rule": "No LoRA training or threshold finalization while pending."
+}

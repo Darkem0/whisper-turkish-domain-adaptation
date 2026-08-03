@@ -1,0 +1,20 @@
+{
+  "id": "tr_target_proxy_eval_v2b",
+  "status": "definition_locked_materialization_pending",
+  "supersedes": "evaluation/suite_v2a.json",
+  "acceptance_core": {
+    "domains": ["mediaspeech_official_test", "cv_spontaneous_speaker_holdout", "cv_scripted_official_test", "fleurs_tr_tr_official_test"],
+    "robustness": ["mediaspeech_clean_to_phone", "mediaspeech_clean_to_g711_mulaw"],
+    "metrics": ["raw_wer", "raw_cer", "normalized_wer", "normalized_cer"],
+    "cv_spontaneous_metrics": ["disfluency_precision", "disfluency_recall", "disfluency_f1"]
+  },
+  "tsc_exploratory": {
+    "split": "official_utterance_split",
+    "source_disjoint": false,
+    "speaker_disjoint": false,
+    "use_for_acceptance": false,
+    "tiers": {"smoke": {"duration_hours": 1, "nested": true}, "selection": {"duration_hours": 3, "nested": true}, "full": {"duration_hours": 4.378545833333333, "official_test_complete": true}}
+  },
+  "statistics": {"confidence_interval": 0.95, "bootstrap_replicates": 2000, "seed": 20260730},
+  "decode_contract": {"model": "openai/whisper-large-v3-turbo", "model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "language": "tr", "task": "transcribe", "num_beams": 1, "do_sample": false, "condition_on_prev_tokens": false, "max_new_tokens": 448}
+}

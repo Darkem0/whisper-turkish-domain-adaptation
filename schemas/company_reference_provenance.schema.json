@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Company human-reference provenance row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sample_id", "reference_type", "created_by_human", "human_corrected", "reviewer_id_hash", "review_timestamp", "qa_status", "annotation_policy_version", "adjudication_status", "unresolved_issue_count"],
+  "properties": {
+    "sample_id": {"type": "string", "minLength": 1},
+    "reference_type": {"enum": ["human_transcript", "human_corrected_transcript", "model_only", "unknown"]},
+    "created_by_human": {"type": "boolean"},
+    "human_corrected": {"type": "boolean"},
+    "reviewer_id_hash": {"type": "string", "minLength": 1},
+    "review_timestamp": {"type": "string", "format": "date-time"},
+    "qa_status": {"enum": ["approved", "pending", "rejected", "model_only", "unverified"]},
+    "annotation_policy_version": {"type": "string", "minLength": 1},
+    "adjudication_status": {"enum": ["not_required", "completed", "pending", "unresolved"]},
+    "unresolved_issue_count": {"type": "integer", "minimum": 0}
+  }
+}

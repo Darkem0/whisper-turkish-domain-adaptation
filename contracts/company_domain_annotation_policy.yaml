@@ -1,0 +1,20 @@
+{
+  "contract_id": "company_domain_annotation_policy",
+  "status": "REQUIRES_DATA_OWNER_AND_ASR_REVIEWER_AUTHORIZATION",
+  "reference_standard": {
+    "verbatim_audible_speech": true,
+    "no_inference_or_completion": true,
+    "boundary_cut_policy": "mark, do not silently repair",
+    "unintelligible_policy": "authorized token and reviewer decision required",
+    "numbers_dates_amounts": "preserve spoken form plus authorized normalization mapping",
+    "abbreviations_foreign_words_fillers_repetitions_fragments": "transcribe according to a versioned reviewer guide",
+    "overlap_and_channel_mixing": "mark channel/overlap status when metadata allows",
+    "punctuation_and_casing": "retain raw reference and a separately versioned normalization policy"
+  },
+  "qa": {
+    "final_test_human_qa_required": true,
+    "risk_subset_second_review_adjudication": true,
+    "reviewer_agreement": "required when reviewer identities/decisions are available"
+  },
+  "current_evidence": "MISSING: existing company transcripts were not found or audited."
+}

@@ -1,0 +1,22 @@
+{
+  "contract_id": "A3_v2.clean_replay",
+  "prohibited_legacy_resume": "A3_legacy_aborted_step34_invalid",
+  "reasons": [
+    "A2 full resolved training configuration path",
+    "A2 target/replay manifest and SHA-256",
+    "A2 optimizer step count and optimizer-state provenance",
+    "A2 exact source-data/replay ratios and seed evidence",
+    "cannot prove A2-equivalent encoder+decoder q_proj/v_proj rank 16, step, and optimizer"
+  ],
+  "requested_clean_replay": {
+    "common_voice_scripted": 0.07,
+    "fleurs": 0.03,
+    "total": 0.1
+  },
+  "schema_version": 1,
+  "smoke_result": "runs/SMOKE_D0/result.json",
+  "source_artifact_lock": "runs/A2_v2d_eval/a2_artifact_lock_v2d.json",
+  "source_artifact_lock_exists": true,
+  "validated_at": "2026-07-31T09:21:48.784658+00:00",
+  "validation": "INVALID"
+}

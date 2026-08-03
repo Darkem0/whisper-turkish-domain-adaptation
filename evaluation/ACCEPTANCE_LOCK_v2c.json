@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "lock_status": "pending_baseline_calibration",
+  "files": {"evaluation/acceptance_v2c.json": "bb196341b8783e0374b4a7991e2d0f86d9a4ec31b9bef380125514a0dee7a708"},
+  "rule": "Do not finalize or use this lock to permit LoRA training."
+}

@@ -1,0 +1,89 @@
+{
+  "contract_id": "A6_v2_encoder_decoder_zero_replay_training_contract",
+  "schema_version": 1,
+  "status": "READY_FOR_A6_V2_RESOURCE_SMOKE",
+  "blocker": null,
+  "identity": {
+    "experiment": "A6_v2_encoder_decoder_zero_replay",
+    "base_model": "openai/whisper-large-v3-turbo",
+    "base_model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "tokenizer_processor_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"
+  },
+  "initialization": {
+    "mode": "fresh_base",
+    "parent_adapter": null,
+    "parent_weights_loaded": false,
+    "adapter_loading": "FORBIDDEN_A2_A3_A4_A5",
+    "legacy_resume": "FORBIDDEN: A3_legacy_aborted_step34_invalid"
+  },
+  "lora": {
+    "scope": "encoder+decoder",
+    "encoder_target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "decoder_target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "trainable_parameter_count": "RUNTIME_MEASUREMENT_REQUIRED; approximate_sum_A3_A4=3276800 is not a contract assertion"
+  },
+  "optimization": {
+    "dtype": "fp16",
+    "gradient_checkpointing": true,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "effective_batch_size": 16,
+    "optimizer": "AdamW",
+    "learning_rate": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.01,
+    "scheduler": "linear",
+    "warmup_steps": 20,
+    "max_steps": 200,
+    "seed": 20260730
+  },
+  "cadence": {
+    "checkpoint_steps": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "local_validation_steps": [
+      50,
+      100,
+      150,
+      200
+    ]
+  },
+  "data": {
+    "train_manifest": "data/materialized/training_a5_v2/a5_train_manifest.jsonl",
+    "validation_manifest": "data/materialized/training_a4_v2/a4_validation_manifest.jsonl",
+    "replay_manifest": "data/materialized/training_a5_v2/a5_replay_manifest.jsonl",
+    "schedule": "data/materialized/training_a5_v2/a5_sample_schedule.jsonl",
+    "replay_ratio": 0.0,
+    "replay_rows": 0,
+    "schedule_policy": "exact immutable A5 cleaned schedule; no regeneration"
+  },
+  "resume": {
+    "policy": "only a verified A6 checkpoint from this exact contract may resume",
+    "legacy_resume_forbidden": true
+  },
+  "promotion": {
+    "diagnostic_only": true,
+    "production_promotion_allowed": false
+  },
+  "resources": {
+    "vram_limit_mib": 12282,
+    "smoke_steps": 2,
+    "smoke_microbatches": 32,
+    "reserved_vram_gate_mib": 10000
+  }
+}

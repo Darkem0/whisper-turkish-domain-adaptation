@@ -1,0 +1,14 @@
+{
+  "contract_id": "A5_v2_encoder_only_zero_replay_eval_contract",
+  "schema_version": 1,
+  "status": "READY_FOR_A5_V2_RESOURCE_SMOKE",
+  "diagnostic_only": true,
+  "production_promotion_allowed": false,
+  "local_validation": {"path": "data/materialized/training_a4_v2/a4_validation_manifest.jsonl", "sha256": "864e801656175b9dc515f52d2852f1a740d2d88224ee4801fcd45806f4c09976", "rows": 9081},
+  "evaluation_lock": {"path": "evaluation/EVAL_LOCK_v2d.json", "sha256": "410c01e8ed262fc3312ff954a8970390a8289b3e9ee5fb449d1798f9b1f18b2b"},
+  "acceptance_lock": {"path": "evaluation/ACCEPTANCE_LOCK_v2d.json", "sha256": "4f16db1738d6ab7e5ead08f894d5951718d621ad5fcef3a161f284b0fce9ee62"},
+  "immutable_registry": {"path": "protocols/immutable_test_registry.json", "sha256": "5836c44a442cf16e0243ce2bf078f206f9c7d3f43f949dc4f32d41fa9020ed6a"},
+  "frozen_sets": [{"name": "mediaspeech_paired", "path": "data/materialized/mediaspeech_v2d/paired/mediaspeech_holdout_paired_v2d.jsonl", "rows": 1479, "sha256": "89ad4452b97f1b462516b3aca7ea85d0a390c88d16c9d0f386b942adc5c734da"}, {"name": "cv_scripted", "path": "data/materialized/hf_v2d/cv_scripted_test_v2d.jsonl", "rows": 9650, "sha256": "3e61f5c50744d401e4a6d6ef8bda4414d84d7561eeb027e5ebf7ec37f4975ce6"}, {"name": "fleurs", "path": "data/materialized/fleurs_tr_v2d/fleurs_tr_test_v2d.jsonl", "rows": 743, "sha256": "e94f2e096b326710a1a25d988a7a3f15b5ad385790ccf7d5439a3b152147a222"}, {"name": "cv_spontaneous_holdout", "path": "data/materialized/cv_spontaneous_v2c/cv_spontaneous_holdout_v2c.jsonl", "rows": 11, "sha256": "f6a8f4c497e89d383c9ec63c1b203eccbbec8db59cf184cc3d72521cc2d88d4e", "report_only": true}, {"name": "tsc_exploratory", "path": "data/materialized/tsc_v2a/tsc_full_v2a.jsonl", "rows": 3484, "sha256": "6fb4a6c71a34649ed0dc49b62ff0a7d9047331de55a5c9b51c00aa8ac90b4f5b", "exploratory": true}],
+  "decoding_reference": "A3/A4 frozen evaluation locked decoding config",
+  "frozen_evaluation_plan": {"checkpoints": [50, 100, 150, 200], "targets": 28}
+}

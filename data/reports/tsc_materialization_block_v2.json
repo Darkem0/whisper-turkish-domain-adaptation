@@ -1,0 +1,14 @@
+{
+  "status": "blocked_source_disjoint_requirement",
+  "dataset_id": "issai/Turkish_Speech_Corpus",
+  "evidence": {
+    "inspection_sample_count": 200,
+    "parent_path_groups": 3,
+    "numeric_utterance_id_fraction": 1.0,
+    "audio_transcript_coverage": 1.0,
+    "grouping_quality": "utterance_only",
+    "leakage_risk": "high"
+  },
+  "consequence": "Do not create claimed source-group-disjoint 1h/5h/10h TSC tiers, do not include TSC holdout in the train/eval acceptance path, and do not run A0 against the incomplete primary suite.",
+  "unblock_requirement": "Obtain authoritative source/video/program or speaker grouping metadata that links multiple utterances to a shared source group."
+}

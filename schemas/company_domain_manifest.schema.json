@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Company-domain secure manifest row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sample_id", "audio_path", "audio_sha256", "duration_seconds", "split_group_id", "channel_role", "transcript_path", "transcript_sha256", "human_qa_status", "annotation_policy_version", "source_project"],
+  "anyOf": [{"required": ["call_id"]}, {"required": ["recording_id"]}],
+  "properties": {
+    "sample_id": {"type": "string", "minLength": 1},
+    "audio_path": {"type": "string", "minLength": 1},
+    "audio_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "call_id": {"type": "string", "minLength": 1},
+    "recording_id": {"type": "string", "minLength": 1},
+    "split_group_id": {"type": "string", "minLength": 1},
+    "channel_role": {"enum": ["agent", "customer", "stereo_combined", "unknown"]},
+    "transcript_path": {"type": "string", "minLength": 1},
+    "secure_transcript_reference": {"type": "string", "minLength": 1},
+    "transcript_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "human_qa_status": {"enum": ["human_verified", "human_corrected", "pending", "model_only", "human_unverified"]},
+    "annotation_policy_version": {"type": "string", "minLength": 1},
+    "source_project": {"type": "object", "required": ["project_id_hash"], "properties": {"project_id_hash": {"type": "string"}, "activity_id_hash": {"type": "string"}, "codec": {"type": "string"}, "sample_rate_hz": {"type": "integer", "minimum": 1}}, "additionalProperties": false}
+  }
+}

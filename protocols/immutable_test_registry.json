@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-07-31T08:58:37.703009+00:00",
+  "entries": [
+    {
+      "path": "evaluation/suite_v2d.json",
+      "sha256": "04b73ae0af2db4d52746b53b0484e3cae6ca842fca8acacd8ecb315899865e7b"
+    },
+    {
+      "path": "evaluation/EVAL_LOCK_v2d.json",
+      "sha256": "410c01e8ed262fc3312ff954a8970390a8289b3e9ee5fb449d1798f9b1f18b2b"
+    },
+    {
+      "path": "src/whisper_arge/normalization.py",
+      "sha256": "d2dda80d1fdbbb49500f1d492a2754247f58982f21b99c8af9abcd189c37f9ee"
+    },
+    {
+      "path": "src/whisper_arge/metrics_v2.py",
+      "sha256": "48092d006d99dad7ed4caefe8aed7f3bc1d61c80747ddeb63af04bbb5167f4a7"
+    }
+  ],
+  "rule": "Supervisor verifies these before every experiment; experiments do not write evaluation inputs.",
+  "schema_version": 1
+}

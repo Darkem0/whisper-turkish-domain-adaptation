@@ -1,0 +1,44 @@
+{
+  "status": "draft_only_not_locked",
+  "basis": "A0 base inference, 2000-replicate bootstrap confidence intervals",
+  "rule": "These are proposed candidate acceptance criteria only. acceptance_v2d and ACCEPTANCE_LOCK_v2d remain pending and unchanged.",
+  "candidate_requirements": {
+    "mediaspeech_clean_normalized_wer": {
+      "baseline_point": 0.1625547293,
+      "baseline_ci95_upper": 0.201149792,
+      "proposed_candidate_point_max": 0.1625547293,
+      "proposed_candidate_ci95_upper_max": 0.201149792
+    },
+    "cv_scripted_normalized_wer": {
+      "baseline_point": 0.1556052608,
+      "baseline_ci95_upper": 0.1787094721,
+      "proposed_candidate_point_max": 0.1556052608,
+      "proposed_candidate_ci95_upper_max": 0.1787094721
+    },
+    "fleurs_normalized_wer": {
+      "baseline_point": 0.1028743161,
+      "baseline_ci95_upper": 0.1742054207,
+      "proposed_candidate_point_max": 0.1028743161,
+      "proposed_candidate_ci95_upper_max": 0.1742054207
+    },
+    "mediaspeech_phone_raw_wer_delta": {
+      "baseline_point": 0.0073310773,
+      "baseline_ci95_upper": 0.0294422868,
+      "proposed_candidate_ci95_upper_max": 0.0294422868
+    },
+    "mediaspeech_g711_raw_wer_delta": {
+      "baseline_point": -0.0158911777,
+      "baseline_ci95_upper": 0.0032604734,
+      "proposed_candidate_ci95_upper_max": 0.0032604734
+    }
+  },
+  "report_only": {
+    "cv_spontaneous": "two anonymous speaker blocks and 11 clips; not a hard acceptance gate; disfluency F1 unsupported",
+    "tsc": "exploratory only; excluded from acceptance"
+  },
+  "calibration_before_lock": [
+    "Run at least one candidate adapter with the identical manifests and decode contract.",
+    "Confirm candidate bootstrap implementation and paired delta computation reproduce A0 hashes.",
+    "Review whether the FLEURS CI width warrants a minimum absolute-improvement rule before finalization."
+  ]
+}

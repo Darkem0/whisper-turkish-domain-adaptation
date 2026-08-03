@@ -1,0 +1,7 @@
+{
+  "schema_version": 2,
+  "lock_status": "finalized",
+  "files": {"evaluation/acceptance_v2d.json": "3cc9d61287b5f9dfe97de0e13d1cd6ea057d5d68603eda90724ca79f26eb7f0d"},
+  "finalized_after": "A0 base inference and 10000-replicate acceptance-statistics audit",
+  "rule": "Permits only the specified sequential 200-step v2d smoke experiments; 750-step runs require explicit follow-up authorization."
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "status": "finalized_a0_calibrated",
+  "acceptance_eligible": true,
+  "statistical_contract": {
+    "replicates": 10000,
+    "seed": 20260730,
+    "utterance_bootstrap": "with replacement; every replicate computes corpus error sum divided by corpus reference-word sum",
+    "model_comparison": "paired stable_id resampling with replacement",
+    "raw_wer": "diagnostic_only"
+  },
+  "robustness_proxy": {
+    "formula": "0.50*clean_normalized_wer + 0.25*phone_normalized_wer + 0.25*g711_normalized_wer",
+    "a0_baseline": 0.16165
+  },
+  "promotion_200_step": {
+    "proxy_score_max": 0.15865,
+    "proxy_paired_delta_point_max": -0.003,
+    "proxy_paired_delta_ci95_upper_max": 0.002,
+    "mediaspeech_variant_delta_max": 0.01,
+    "cv_scripted_delta_max": 0.008,
+    "fleurs_delta_max": 0.01,
+    "hard_gate_paired_ci95_upper_max": 0.015
+  },
+  "final_750_step": {
+    "proxy_score_max": 0.15665,
+    "proxy_paired_delta_point_max": -0.005,
+    "proxy_paired_delta_ci95_upper_strictly_less_than": 0.0,
+    "mediaspeech_variant_delta_max": 0.01,
+    "cv_scripted_delta_max": 0.008,
+    "fleurs_delta_max": 0.01,
+    "hard_gate_paired_ci95_upper_max": 0.015
+  },
+  "report_only": {
+    "cv_spontaneous": {"role": "style_probe", "hard_gate": false},
+    "tsc": {"role": "exploratory", "hard_gate": false}
+  },
+  "rule": "Only candidate results using the immutable v2d baseline snapshot may be compared against these gates."
+}

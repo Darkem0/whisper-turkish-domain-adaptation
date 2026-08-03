@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "lock_status": "definition_locked_materialization_pending",
+  "files": {
+    "evaluation/suite_v2c.json": "3ce19dc0ad3da1ba89fb30345d0de17256505dfb1600c06b60d36c61797b89f5",
+    "src/whisper_arge/cv_spontaneous.py": "0a0de6fe902dcf9164dc9719d0c2341cd5bf9ff77af520889073ad798220a682",
+    "src/whisper_arge/evaluation_v2.py": "78dcfb958e2bdd496f19f6c7dbbce71acc93d93817e876b5794dd3629817c2e1"
+  },
+  "pending_before_real_experiments": ["MediaSpeech official archive inspection", "CV Scripted and FLEURS manifests", "A0 prediction and metric reports"],
+  "rule": "Do not start LoRA training while pending."
+}

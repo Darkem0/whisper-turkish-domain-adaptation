@@ -1,0 +1,131 @@
+{
+  "a3_manifests": {
+    "a3_replay_manifest": {
+      "path": "data/materialized/training_a3_v2/a3_replay_manifest.jsonl",
+      "rows": 17224,
+      "sha256": "fddc001444f04cd4953a0bfefd5a5e865d11e3e5790732b0b130b9574ca1256c"
+    },
+    "a3_train_manifest": {
+      "path": "data/materialized/training_a3_v2/a3_train_manifest.jsonl",
+      "rows": 155007,
+      "sha256": "739e4f5d833dfb89c55863d91ca31ef9b8cd2568e9e9917cd019bc612f1c20fd"
+    },
+    "a3_validation_manifest": {
+      "path": "data/materialized/training_a3_v2/a3_validation_manifest.jsonl",
+      "rows": 9081,
+      "sha256": "6462a317930038254eede401ce298b1cbed876cb6aca8339360e4e98bc0da6ae"
+    }
+  },
+  "contract_id": "A3_v2_data_manifest.lock",
+  "deterministic_sampler": {
+    "microbatches": 3200,
+    "path": "data/materialized/training_a3_v2/a3_sample_schedule_200.jsonl",
+    "role_counts": {
+      "acoustic": 2880,
+      "clean_replay": 320
+    },
+    "sha256": "a9cde664e55dc8ac852b5a73343bb51d0db8380bfb5abff8ece9cf306d8857af"
+  },
+  "invariant": "A3 train, replay, and validation manifests are mutually disjoint by sample_id; validation is disjoint from train/replay by audio SHA-256. Frozen external evaluation remains read-only.",
+  "locked_verified_inputs": [
+    {
+      "path": "data/materialized/training_v2d/target_train_v2d.jsonl",
+      "role": "a2_target_train",
+      "sha256": "636a3783fb044c41630249b0de339b5442cad4c45248edfbbd5cc56c15a39d9e"
+    },
+    {
+      "path": "data/materialized/training_v2d/sample_schedule_v2d_200.jsonl",
+      "role": "a2_sample_schedule",
+      "sha256": "70ccc7470d0271b2cb97ed37b604f278c0d9db73178462d13053ffcba5b34217"
+    },
+    {
+      "path": "data/materialized/tsc_v2a/tsc_train_v2a.jsonl",
+      "role": "tsc_source_train",
+      "rows": 179258,
+      "sha256": "32bc299a81dbb8be9b8b571dfee417595d17a03024448df77b992f1aa61f506e"
+    },
+    {
+      "path": "data/materialized/mediaspeech_v2d/mediaspeech_train_v2d.jsonl",
+      "role": "mediaspeech_source_train",
+      "rows": 2020,
+      "sha256": "a487f100133045965c3e91dfc17c44664e9e4c2762e02176633d5f717851fd81"
+    },
+    {
+      "path": "data/materialized/cv_spontaneous_v2c/cv_spontaneous_train_v2c.jsonl",
+      "role": "cv_spontaneous_source_train",
+      "rows": 41,
+      "sha256": "7b20b6c982f7bae0de26f1ea2de7b237dddfb1be4da29c1c11ab1ee0da545495"
+    }
+  ],
+  "peer_contract_sha256": {
+    "contracts/A3_v2_eval_contract.yaml": "42c583e116d3725636321b8a11c8557f82829b016d95d54146cb0beacc2f92d2",
+    "contracts/A3_v2_training_contract.yaml": "05877dba803d8b5ea2ccd9e6a44730dae7a98b3a27d94701e566b63dcb98ee8f"
+  },
+  "schema_version": 1,
+  "selection": {
+    "acoustic_rows_by_source": {
+      "cv_spontaneous": 15,
+      "mediaspeech": 1727,
+      "tsc": 153265
+    },
+    "clean_replay_ratio": 0.1,
+    "excluded_due_to_frozen_evaluation": {},
+    "excluded_invalid_rows": [
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-68089",
+        "sample_id": "cvsp-68089",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-72082",
+        "sample_id": "cvsp-72082",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-78549",
+        "sample_id": "cvsp-78549",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-78550",
+        "sample_id": "cvsp-78550",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-79391",
+        "sample_id": "cvsp-79391",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-84256",
+        "sample_id": "cvsp-84256",
+        "source": "cv_spontaneous"
+      },
+      {
+        "reason": "missing_or_invalid_fields=reference: cv_spontaneous:cvsp-91623",
+        "sample_id": "cvsp-91623",
+        "source": "cv_spontaneous"
+      }
+    ],
+    "leakage_policy": "speaker_id when present; otherwise stable source recording/file group; validation is disjoint by sample_id and audio_sha256.",
+    "replay_rows_by_source": {
+      "cv_spontaneous": 2,
+      "mediaspeech": 192,
+      "tsc": 17030
+    },
+    "seed": 42,
+    "source_rows": {
+      "cv_spontaneous": 34,
+      "mediaspeech": 2020,
+      "tsc": 179258
+    },
+    "validation_ratio_target": 0.05,
+    "validation_rows_by_source": {
+      "cv_spontaneous": 17,
+      "mediaspeech": 101,
+      "tsc": 8963
+    }
+  },
+  "status": "MATERIALIZED_READY_FOR_RESOURCE_SMOKE",
+  "unresolved_required_inputs": []
+}

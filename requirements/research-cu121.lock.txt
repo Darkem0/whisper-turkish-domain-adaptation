@@ -1,0 +1,14 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.5.1+cu121
+accelerate==1.1.1
+datasets[audio]==3.1.0
+jiwer==3.0.5
+librosa==0.10.2.post1
+numpy==1.26.4
+peft==0.13.2
+safetensors==0.4.5
+scipy==1.14.1
+soundfile==0.12.1
+transformers==4.46.3
+

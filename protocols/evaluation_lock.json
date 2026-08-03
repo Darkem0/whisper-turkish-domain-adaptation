@@ -1,0 +1,5 @@
+{
+  "registry": "protocols/immutable_test_registry.json",
+  "source_lock": "evaluation/EVAL_LOCK_v2d.json",
+  "source_lock_sha256": "410c01e8ed262fc3312ff954a8970390a8289b3e9ee5fb449d1798f9b1f18b2b"
+}

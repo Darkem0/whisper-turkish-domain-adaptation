@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "recipe_id": "new_multidomain_lora_baseline_v1",
+  "model": "openai/whisper-large-v3-turbo",
+  "model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+  "dataset_registry": "data/registry.json",
+  "dataset_manifest": "data/materialized/train_multidomain_v1.jsonl",
+  "dataset_manifest_sha256": "MATERIALIZE_BEFORE_RUN",
+  "evaluation_lock": "evaluation/EVAL_LOCK.json",
+  "evaluation_lock_sha256": "GENERATED_AFTER_IMPLEMENTATION",
+  "seed": 20260730,
+  "training": {
+    "budget_steps": 200,
+    "precision": "fp16",
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.00001,
+    "early_stopping_patience": 3,
+    "lora": {
+      "method": "lora",
+      "scope": "encoder+decoder",
+      "target_modules": ["q_proj", "v_proj"],
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.05
+    },
+    "sampling": {
+      "strategy": "domain_balanced",
+      "ratios": {
+        "common_voice": 0.3,
+        "mediaspeech": 0.2,
+        "fleurs": 0.15,
+        "khan": 0.2,
+        "khan_math": 0.15
+      },
+      "clean_replay_ratio": 0.2
+    },
+    "curriculum": "shuffled",
+    "augmentation": {
+      "kind": "none",
+      "probability": 0.0
+    }
+  }
+}

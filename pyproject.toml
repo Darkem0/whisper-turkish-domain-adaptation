@@ -5,12 +5,41 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "whisper-turkish-domain-adaptation"
 version = "0.1.0"
-description = "Mock-first reproducible Turkish ASR adaptation research scaffold"
-requires-python = ">=3.10"
+description = "Reproducible Turkish Whisper adaptation research and public reference scaffold"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
 license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.4",
+  "ruff==0.8.4",
+]
+research = [
+  "accelerate==1.1.1",
+  "datasets[audio]==3.1.0",
+  "jiwer==3.0.5",
+  "librosa==0.10.2.post1",
+  "numpy==1.26.4",
+  "peft==0.13.2",
+  "safetensors==0.4.5",
+  "scipy==1.14.1",
+  "soundfile==0.12.1",
+  "transformers==4.46.3",
+]
+
+[project.scripts]
+whisper-arge = "whisper_arge.cli:main"
 
 [tool.setuptools]
-packages = ["whisper_adaptation"]
+packages = ["whisper_adaptation", "whisper_arge"]
+package-dir = {whisper_adaptation = "whisper_adaptation", whisper_arge = "src/whisper_arge"}
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
+target-version = "py311"
