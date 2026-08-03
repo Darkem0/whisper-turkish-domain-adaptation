@@ -1,0 +1,18 @@
+{
+  "contract_id": "A4_v2.layer_selective",
+  "prohibited_legacy_resume": "A3_legacy_aborted_step34_invalid",
+  "reasons": [
+    "A2 full resolved training configuration path",
+    "A2 target/replay manifest and SHA-256",
+    "A2 optimizer step count and optimizer-state provenance",
+    "A2 exact source-data/replay ratios and seed evidence",
+    "cannot bind A3 replay/training settings to a VALID parent contract"
+  ],
+  "requested_targets": "last 6 encoder layers; all decoder self/cross attention q_proj/v_proj; rank 16",
+  "schema_version": 1,
+  "smoke_result": "runs/SMOKE_D0/result.json",
+  "source_artifact_lock": "runs/A2_v2d_eval/a2_artifact_lock_v2d.json",
+  "source_artifact_lock_exists": true,
+  "validated_at": "2026-07-31T09:21:48.785159+00:00",
+  "validation": "INVALID"
+}

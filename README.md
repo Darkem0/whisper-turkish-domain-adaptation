@@ -10,6 +10,11 @@ gerçek çağrı merkezi performansı veya şirket verisi sonucu değildir.
 - D3, desteklenen decoding profilidir; MEM0 varsayılan bellek profilidir.
 - A2 encoder+decoder Q/V LoRA, hedef proxyde kazanç sağladı ancak FLEURS
   regresyonu nedeniyle production adayı değildir.
+- A2 robustness proxy `0.14655`, A0 farkı `-0.01508` ve %95 CI
+  `[-0.03303, -0.00396]` ile iyileşti; FLEURS normalized WER `0.17693`
+  olduğu için promotion gate geçmedi.
+- `A3_legacy_aborted_step34_invalid` 34/200 adımda durduruldu; geçerli adapter
+  veya sonuç üretmedi ve hiçbir koşulda resume/promotion edilmez.
 - A3 encoder-only + replay, CV Scripted guardrail nedeniyle promotable değildir.
 - A4 decoder-only, A5 encoder-only ve A6 encoder+decoder temiz-schedule
   ablationları diagnostic-only olarak korunur.

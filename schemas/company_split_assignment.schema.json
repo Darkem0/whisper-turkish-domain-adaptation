@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Company development/final-holdout split row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sample_id", "split_group_id", "split"],
+  "properties": {"sample_id": {"type": "string", "minLength": 1}, "split_group_id": {"type": "string", "minLength": 1}, "split": {"enum": ["development", "final_holdout"]}}
+}

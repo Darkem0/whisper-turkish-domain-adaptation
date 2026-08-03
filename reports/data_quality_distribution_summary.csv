@@ -1,0 +1,9 @@
+train_or_validation,dimension,value,rows,duration_seconds
+train,source,tsc,170295,716846.482
+train,source,mediaspeech,1919,27518.6
+train,source,cv_spontaneous,24,351.18
+train,group_key_source_field,source_stable_id,172238,744716.262
+validation,source,tsc,8963,37708.16
+validation,source,mediaspeech,101,1445.8
+validation,source,cv_spontaneous,17,513.036
+validation,group_key_source_field,source_stable_id,9081,39666.996

@@ -193,7 +193,7 @@ Yorum: Aynı model, yanlış decode ile başarısız görünürken doğru decode
 Kullanıcının sağladığı dosya:
 
 ```text
-C:\Users\emre\Desktop\test.mp3
+%USERPROFILE%\Desktop\test.mp3
 ```
 
 Süre yaklaşık 9 dakika 22 saniyedir. Referans transcript sonradan sağlanmıştır. Referans metin yaklaşık 9:06'da bittiği için hem tam çıktı hem de 9:06'ya kadar kırpılmış çıktı ölçüldü.

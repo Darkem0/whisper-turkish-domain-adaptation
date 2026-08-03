@@ -43,3 +43,14 @@ outputs/
 company_data/
 private_data/
 .cache/
+
+# Machine-local manifests, paths, diagnostics, and transcript-bearing review data.
+configs/local_paths.yaml
+protocols/inference_manifest.jsonl
+protocols/inference_manifest.lock.json
+reports/inference_manifest_report.md
+reports/runtime_crash_diagnostic.txt
+reports/a3_v2_cv_scripted_failure_analysis.md
+reports/data_quality_duplicate_transcript_report.csv
+reports/data_quality_manual_review_sample.jsonl
+reports/manual_data_quality_review/

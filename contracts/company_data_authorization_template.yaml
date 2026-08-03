@@ -1,0 +1,20 @@
+{
+  "template_id": "company_data_authorization",
+  "status": "REQUIRED",
+  "data_owner": "REQUIRED",
+  "authorizing_person_or_role": "REQUIRED",
+  "authorization_date": "REQUIRED",
+  "permitted_purpose": "REQUIRED",
+  "evaluation_allowed": "REQUIRED",
+  "training_allowed": "REQUIRED",
+  "pseudo_labeling_allowed": "REQUIRED",
+  "authorized_users": "REQUIRED",
+  "authorized_compute_hosts": "REQUIRED",
+  "authorized_secure_root": "REQUIRED",
+  "permitted_output_root": "REQUIRED",
+  "retention_policy": "REQUIRED",
+  "deletion_policy": "REQUIRED",
+  "PII_handling_policy": "REQUIRED",
+  "external_upload_forbidden": true,
+  "approval_reference": "REQUIRED"
+}

@@ -1,0 +1,7 @@
+{
+  "contract_id":"A4_v2_data_manifest_lock",
+  "status":"READY_FOR_A4_V2_RESOURCE_SMOKE",
+  "verified_parent_inputs":{"train":"data/materialized/training_v2d/target_train_v2d.jsonl","train_sha256":"636a3783fb044c41630249b0de339b5442cad4c45248edfbbd5cc56c15a39d9e","schedule":"data/materialized/training_v2d/sample_schedule_v2d_200.jsonl","schedule_sha256":"70ccc7470d0271b2cb97ed37b604f278c0d9db73178462d13053ffcba5b34217","replay_ratio":0.0},
+  "required_unmaterialized":{"train":"data/materialized/training_a4_v2/a4_train_manifest.jsonl","validation":"data/materialized/training_a4_v2/a4_validation_manifest.jsonl","replay":"data/materialized/training_a4_v2/a4_replay_manifest.jsonl","schedule":"data/materialized/training_a4_v2/a4_sample_schedule.jsonl"},
+  "exact_blocker":{"field":"validation split policy","reason":"No matrix-authorized group-disjoint validation policy exists. Reusing data/materialized/training_a3_v2/a3_validation_manifest.jsonl would overlap parent A2 train audio_sha256 by 9081 records."}
+}

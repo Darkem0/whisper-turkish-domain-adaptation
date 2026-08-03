@@ -1,0 +1,170 @@
+{
+  "activation_gates": [
+    "All input and contract SHA-256 values match.",
+    "Run the defined A3_v2-only two-step resource smoke after explicit authorization.",
+    "Pass every resource smoke acceptance gate.",
+    "Obtain separate authorization before the 200-step training run."
+  ],
+  "artifact_validation_rules": [
+    "Verify every input manifest, schedule, evaluation lock, acceptance lock, model revision, adapter and output SHA-256 before and after execution.",
+    "Record seed, package versions, CUDA version, GPU capacity, trainable parameter count, peak allocated and reserved VRAM, wall time, and all optimizer steps.",
+    "Reject a completed run if optimizer_steps_completed != 200, any required artifact is absent, or the selected initialization is not recorded.",
+    "Never write to evaluation/ or protocols/immutable_test_registry.json during a run.",
+    "Promotion requires all gates in contracts/A3_v2_eval_contract.yaml; otherwise retain MEM0/D3 production inference and do not promote A3_v2."
+  ],
+  "cadence": {
+    "automatic_best_checkpoint_promotion": false,
+    "checkpoint_evaluation": "Evaluate each checkpoint against the frozen A3_v2 eval contract.",
+    "checkpoint_steps": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "eval_steps": 50,
+    "final_adapter": "step_200 adapter must be separately SHA-256 locked",
+    "logging_steps": 5,
+    "resume_policy": "Only a verified A3_v2 checkpoint from this contract may resume; legacy A3 step 34 is forbidden.",
+    "save_steps": 50
+  },
+  "contract_id": "A3_v2_training_contract",
+  "data": {
+    "a2_clean_replay_ratio": 0.0,
+    "a3_clean_replay_ratio": 0.1,
+    "mixture": {
+      "acoustic_adaptation": 0.9,
+      "clean_replay": 0.1,
+      "enforcement": "precomputed deterministic microbatch schedule"
+    },
+    "replay_manifest": "data/materialized/training_a3_v2/a3_replay_manifest.jsonl",
+    "replay_manifest_sha256": "fddc001444f04cd4953a0bfefd5a5e865d11e3e5790732b0b130b9574ca1256c",
+    "sampler_microbatches": 3200,
+    "sampler_role_counts": {
+      "acoustic": 2880,
+      "clean_replay": 320
+    },
+    "sampler_schedule": "data/materialized/training_a3_v2/a3_sample_schedule_200.jsonl",
+    "sampler_schedule_sha256": "a9cde664e55dc8ac852b5a73343bb51d0db8380bfb5abff8ece9cf306d8857af",
+    "sampling_schedule": "data/materialized/training_v2d/sample_schedule_v2d_200.jsonl",
+    "sampling_schedule_sha256": "70ccc7470d0271b2cb97ed37b604f278c0d9db73178462d13053ffcba5b34217",
+    "train_manifest": "data/materialized/training_a3_v2/a3_train_manifest.jsonl",
+    "train_manifest_sha256": "739e4f5d833dfb89c55863d91ca31ef9b8cd2568e9e9917cd019bc612f1c20fd",
+    "validation_manifest": "data/materialized/training_a3_v2/a3_validation_manifest.jsonl",
+    "validation_manifest_sha256": "6462a317930038254eede401ce298b1cbed876cb6aca8339360e4e98bc0da6ae"
+  },
+  "environment_lock": {
+    "accelerate": "1.1.1",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpu_total_mib": 12282,
+    "peft": "0.13.2",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.46.3"
+  },
+  "identity": {
+    "base_model": "openai/whisper-large-v3-turbo",
+    "base_model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "condition": "A3_v2",
+    "tokenizer_processor_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"
+  },
+  "initialization": {
+    "a2_role": "baseline, technical reference, and comparison result only",
+    "base_model_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "code_compatibility": "VERIFIED: src/whisper_arge/lora_train.py:run_lora_steps calls WhisperForConditionalGeneration.from_pretrained(MODEL, revision=REVISION) and has no A2 adapter load path.",
+    "failed_a2_promotion_policy": "A2 promotion failure is not parent promotion and does not relax A3 gates.",
+    "initialization_mode": "fresh_base",
+    "legacy_resume": "FORBIDDEN: A3_legacy_aborted_step34_invalid",
+    "parent_adapter": null,
+    "parent_reference": "A2_v2d_200",
+    "parent_weights_loaded": false
+  },
+  "lora": {
+    "alpha": 32,
+    "dropout": 0.05,
+    "parameter_count_evidence": "runs/A2_v2d_200/adapter/adapter_model.safetensors encoder tensor count; A3 encoder-only selection is src/whisper_arge/lora_train.py:_targets.",
+    "rank": 16,
+    "resolved_module_count": 64,
+    "scope": "encoder-only",
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "trainable_parameter_count": 2621440
+  },
+  "optimization": {
+    "dtype": "fp16",
+    "effective_batch_size": 16,
+    "epochs": "NOT_APPLICABLE: step-budgeted schedule",
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "max_steps": 200,
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "learning_rate": 1e-05,
+      "max_grad_norm": 1.0,
+      "name": "AdamW",
+      "weight_decay": 0.01
+    },
+    "per_device_batch_size": 1,
+    "per_device_train_batch_size": 1,
+    "scheduler": "linear",
+    "seed": 42,
+    "warmup_steps": 20
+  },
+  "outputs": {
+    "required": [
+      "training_progress.json",
+      "training_result.json",
+      "adapter/adapter_model.safetensors",
+      "adapter/adapter_config.json",
+      "environment.json",
+      "evaluation/",
+      "artifact_lock.json"
+    ],
+    "run_root": "runs/A3_v2/attempts/<new_unique_run_id>"
+  },
+  "prohibited_actions": [
+    "start_training",
+    "resume_A3_legacy_aborted_step34_invalid",
+    "reuse_legacy_checkpoint"
+  ],
+  "purpose": "Pre-execution, independently auditable A3_v2 training contract; this file is not authorization to train.",
+  "resources": {
+    "expected_peak_vram_mib": "MISSING until the A3_v2-only smoke is run",
+    "expected_runtime_seconds": "MISSING until smoke: median_step_time * 200; report an additional 25 percent safety margin",
+    "preflight_smoke": {
+      "acceptance_gates": [
+        "no CUDA OOM",
+        "finite loss",
+        "forward/backward/optimizer complete",
+        "peak CUDA reserved < 10000 MiB",
+        "process stable",
+        "adapter checkpoint written",
+        "only encoder Q/V LoRA parameters trainable",
+        "actual trainable parameters verified against approximately 2621440"
+      ],
+      "status": "DEFINED_NOT_RUN",
+      "steps": 2
+    },
+    "smoke_metrics_required": [
+      "median_step_time_seconds",
+      "peak_allocated_mib",
+      "peak_reserved_mib",
+      "driver_vram_mib"
+    ],
+    "vram_limit_mib": 12282
+  },
+  "schema_version": 1,
+  "status": "READY_FOR_A3_V2_RESOURCE_SMOKE",
+  "verified_a2_reference": {
+    "adapter": "runs/A2_v2d_200/adapter/adapter_model.safetensors",
+    "adapter_sha256": "fab6ca274212aa02bfc3ce3a993de7a37d6a2d4cd6f9bcb1c2b05a0c2231b054",
+    "promotion_evidence": "runs/A2_v2d_eval/a2_artifact_lock_v2d.json:promotion_200_step.pass",
+    "promotion_pass": false,
+    "training_contract": "data/materialized/training_v2d/training_contract_v2d.json",
+    "training_lock_sha256": "f846227316b8dbdc69eb07ac17d2f6d4c90cec7af19d5adabee64177ec742299"
+  }
+}

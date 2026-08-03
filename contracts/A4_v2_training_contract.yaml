@@ -1,0 +1,15 @@
+{
+  "contract_id": "A4_v2_training_contract",
+  "status": "READY_FOR_A4_V2_RESOURCE_SMOKE",
+  "blocker": null,
+  "matrix_definition": {"id":"A4","parent":"A2","hypothesis":"Decoder-only q/v r16 yalnızca tanısal scope probudur.","intervention":"training.lora.scope: encoder+decoder -> decoder-only","diagnostic_only":true,"automatic_promotion":false},
+  "identity": {"base_model":"openai/whisper-large-v3-turbo","base_model_revision":"41f01f3fe87f28c78e2fbf8b568835947dd65ed9","processor_tokenizer_revision":"41f01f3fe87f28c78e2fbf8b568835947dd65ed9","tokenizer_processor_revision":"41f01f3fe87f28c78e2fbf8b568835947dd65ed9"},
+  "initialization": {"mode":"fresh_base","parent_reference":"A2","parent_adapter":null,"a3_checkpoint_as_parent":false,"legacy_resume":"FORBIDDEN: A3_legacy_aborted_step34_invalid"},
+  "lora": {"scope":"decoder-only","target_modules":["q_proj","v_proj"],"rank":16,"alpha":32,"dropout":0.05,"trainable_parameter_count":"MISSING: must be resolved from the pinned base model before smoke; no model load in this task"},
+  "optimization_inherited_from_A2": {"dtype":"fp16","gradient_checkpointing":true,"per_device_batch_size":1,"gradient_accumulation_steps":16,"effective_batch_size":16,"optimizer":"AdamW","learning_rate":0.00001,"betas":[0.9,0.999],"weight_decay":0.01,"scheduler":"linear","warmup_steps":20,"max_steps":200,"seed":20260730,"logging_steps":5,"save_steps":50,"local_validation_steps":50},
+  "data": {"train_manifest":"data/materialized/training_a4_v2/a4_train_manifest.jsonl","validation_manifest":"data/materialized/training_a4_v2/a4_validation_manifest.jsonl","schedule":"data/materialized/training_a4_v2/a4_sample_schedule.jsonl","replay_manifest":"data/materialized/training_a4_v2/a4_replay_manifest.jsonl","replay_ratio":0.0,"replay_rows":0,"replay_policy":"A2 inherited; A3 10 percent replay is explicitly not inherited."},
+  "resources": {"vram_limit_mib":12282,"smoke":"2 optimizer steps only after contract unblocked","required_gates":["no CUDA OOM","finite loss","peak CUDA reserved < 10000 MiB","only decoder Q/V LoRA trainable","adapter checkpoint written"]},
+  "resume_policy":"Only a verified A4 checkpoint from this contract after restart; never A3 legacy or A3_v2 checkpoint.",
+  "promotion":"diagnostic_only: never automatic; frozen evaluation and existing thresholds remain required for any future review.",
+  "rollback_conditions":["any hash mismatch","train/validation or frozen-eval leakage","CUDA OOM","NaN/Inf","missing required artifact","attempted legacy resume"]
+}

@@ -1,0 +1,14 @@
+{
+  "contract_id": "company_domain_privacy_policy",
+  "status": "REQUIRED_BEFORE_DATA_MATERIALIZATION",
+  "rules": [
+    "raw audio is not copied",
+    "PII is not written to reports",
+    "only hashed/safe internal identifiers appear in manifests",
+    "predictions/reports do not expose names, account IDs or amounts",
+    "no external service/API upload",
+    "logs do not print transcript or PII",
+    "raw-example review uses an internal secure queue reference only"
+  ],
+  "authorized_access_requirement": "data owner must supply approved local/server root and access scope"
+}

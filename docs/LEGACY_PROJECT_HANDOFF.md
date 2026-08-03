@@ -8,13 +8,13 @@
 
 Çalışmanın şu anda önerilen ana klasörü:
 
-`C:\Users\emre\Documents\Whisper ARGE`
+`%USERPROFILE%\Documents\Whisper ARGE`
 
 Bu klasör mevcut ve `.git` dizini içeriyor; ancak denetim anında çalışma kodu, veri, manifest, model veya rapor dosyası içermiyordu. `docs` klasörü ve bu handoff belgesi bu denetim kapsamında oluşturuldu.
 
 Önceki deneylerin çalışma klasörü olarak geçmiş kayıtlarda geçen yol:
 
-`C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr`
+`%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr`
 
 Bu yol denetim sırasında diskte bulunamadı. Dolayısıyla aşağıdaki deney sonuçları ve dosya yolları iki ayrı sınıfa ayrılmıştır:
 
@@ -27,14 +27,14 @@ Bu ayrım makalede önemlidir: diskte bulunmayan çıktılar yeniden üretilebil
 
 | Rol | Windows yolu | Durum |
 |---|---|---|
-| Yeni ana ARGE klasörü | `C:\Users\emre\Documents\Whisper ARGE` | Diskte mevcut; boş Git deposu |
-| Eski deney çalışma kökü | `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr` | Diskte bulunamadı |
-| Eski deney çıktı kökü | `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter` | Diskte bulunamadı |
-| Minimal Whisper prototipi | `C:\whisper-asr-prototype` | Diskte mevcut |
-| Temizlenmiş araştırma iskeleti | `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation` | Diskte mevcut; gerçek ses/eğitim çıktısı içermiyor |
-| Kullanıcı test sesi | `C:\Users\emre\Desktop\test.mp3` | Diskte mevcut; yaklaşık 3.55 MB |
+| Yeni ana ARGE klasörü | `%USERPROFILE%\Documents\Whisper ARGE` | Diskte mevcut; boş Git deposu |
+| Eski deney çalışma kökü | `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr` | Diskte bulunamadı |
+| Eski deney çıktı kökü | `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter` | Diskte bulunamadı |
+| Minimal Whisper prototipi | `<legacy-prototype-root>` | Diskte mevcut |
+| Temizlenmiş araştırma iskeleti | `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation` | Diskte mevcut; gerçek ses/eğitim çıktısı içermiyor |
+| Kullanıcı test sesi | `%USERPROFILE%\Desktop\test.mp3` | Diskte mevcut; yaklaşık 3.55 MB |
 
-`C:\Users\emre\Documents\Whisper ARGE` ile `C:\whisper-asr-prototype` aynı çalışma ağacının devamı olarak doğrulanamadı. Bunlar ayrı konumlardır.
+`%USERPROFILE%\Documents\Whisper ARGE` ile `<legacy-prototype-root>` aynı çalışma ağacının devamı olarak doğrulanamadı. Bunlar ayrı konumlardır.
 
 ## 3. Python ortamları ve requirements dosyaları
 
@@ -42,15 +42,15 @@ Bu ayrım makalede önemlidir: diskte bulunmayan çıktılar yeniden üretilebil
 
 Önceki deney kaydında kullanılan sanal ortam yolu:
 
-`C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\.venv`
+`%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\.venv`
 
 İlgili deney klasörü bulunamadığı için bu sanal ortam denetim sırasında doğrulanamadı.
 
 ### Diskte bulunan Python/proje tanımları
 
-- `C:\whisper-asr-prototype\.venv` denetimde bulunamadı.
-- `C:\whisper-asr-prototype\requirements.txt` denetimde bulunamadı. README içinde bu dosyaya referans var, fakat dosyanın kendisi yok.
-- Temizlenmiş iskeletin proje tanımı: `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\pyproject.toml`
+- `<legacy-prototype-root>\.venv` denetimde bulunamadı.
+- `<legacy-prototype-root>\requirements.txt` denetimde bulunamadı. README içinde bu dosyaya referans var, fakat dosyanın kendisi yok.
+- Temizlenmiş iskeletin proje tanımı: `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\pyproject.toml`
 - Bu `pyproject.toml` yalnızca temel paket metadata'sı içeriyor; Whisper eğitim/inference bağımlılıklarının tam kilitli listesini içermiyor.
 - Denetimde proje köküne ait `requirements.txt` veya `environment.yml` bulunamadı.
 
@@ -62,16 +62,16 @@ Geçmiş deneylerde kullanılan paket ailesi kayıtlarına göre: PyTorch CUDA, 
 
 Aşağıdaki yollar önceki deney kaydında kullanılmış, ancak eski çalışma köküyle birlikte artık doğrulanamamıştır:
 
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\train_lora_whisper.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_commonvoice_manifest.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_mediaspeech_manifest.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\make_balanced_manifest.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\merge_manifests.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_hf_asr_manifest.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\train_lora_whisper.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_commonvoice_manifest.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_mediaspeech_manifest.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\make_balanced_manifest.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\merge_manifests.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\build_hf_asr_manifest.py`
 
 ### Diskte bulunan eski/minimal eğitim dosyası
 
-- `C:\whisper-asr-prototype\train_whisper.py`
+- `<legacy-prototype-root>\train_whisper.py`
 
 Bu dosya denetimde boş veya tamamlanmamış görünüyor; tek başına geçmiş LoRA eğitimlerini yeniden çalıştıracak durumda olduğu doğrulanamadı.
 
@@ -79,25 +79,25 @@ Bu dosya denetimde boş veya tamamlanmamış görünüyor; tek başına geçmiş
 
 ### Geçmiş deney scriptleri: disk üzerinde bulunamadı
 
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_whisper.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_lora_whisper.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_user_reference.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_text_metrics.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\compare_prediction_metrics.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\normalize_tr.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\transcribe_faster_whisper.py`
-- `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\transcribe_lora_whisper.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_whisper.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_lora_whisper.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_user_reference.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\evaluate_text_metrics.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\compare_prediction_metrics.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\normalize_tr.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\transcribe_faster_whisper.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\src\transcribe_lora_whisper.py`
 
 ### Diskte bulunan prototip evaluation/inference dosyaları
 
-- `C:\whisper-asr-prototype\eval.py`
-- `C:\whisper-asr-prototype\inference.py`
+- `<legacy-prototype-root>\eval.py`
+- `<legacy-prototype-root>\inference.py`
 
 Bu iki dosya `jiwer`, `datasets`, `transformers`, `torch` ve `soundfile` kullanıyor; ancak Türkçe normalizasyon, VAD, uzun çağrı bölütleme, LoRA adapter yükleme ve tekrar güvenli çözümleme özellikleri içermiyor.
 
 ### Yeniden kullanılabilir temiz araştırma kodu
 
-`C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation` altında şu modüller mevcut:
+`%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation` altında şu modüller mevcut:
 
 - `metrics.py`: raw/normalized WER-CER hesabı için küçük yardımcılar.
 - `repeat_safe.py`: tekrar döngülerini sınırlayan çözümleme mantığı.
@@ -114,9 +114,9 @@ Bu repo gerçek Whisper eğitimi veya gerçek ses inference'ı çalıştırmıyo
 
 Aşağıdaki yollar artık disk üzerinde doğrulanamadı:
 
-- MediaSpeech TR arşivi: `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\mediaspeech\TR.tgz`
-- MediaSpeech TR çıkarılmış klasörü: `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\mediaspeech\TR`
-- Common Voice dışa aktarılmış sesleri: `C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\commonvoice17_fixed_audio`
+- MediaSpeech TR arşivi: `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\mediaspeech\TR.tgz`
+- MediaSpeech TR çıkarılmış klasörü: `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\mediaspeech\TR`
+- Common Voice dışa aktarılmış sesleri: `%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\work\datasets\commonvoice17_fixed_audio`
 
 Kaynak kayıtları:
 
@@ -128,7 +128,7 @@ Kaynak kayıtları:
 
 ### Denetimde doğrulanan model cache'i
 
-`C:\Users\emre\.cache\huggingface\hub` altında şu model cache klasörleri mevcut:
+`%USERPROFILE%\.cache\huggingface\hub` altında şu model cache klasörleri mevcut:
 
 - `models--openai--whisper-large-v3-turbo`
 - `models--openai--whisper-large-v3`
@@ -188,7 +188,7 @@ Geçmiş kayıtlarda geçen adapter ve checkpoint yolları:
 
 Tam Windows karşılıkları geçmiş çalışma köküne göre şöyleydi:
 
-`C:\Users\emre\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\outputs\models\...`
+`%USERPROFILE%\Documents\Codex\2026-07-07\se-ti-im-bir-bug-pr\outputs\whisper_tr_callcenter\outputs\models\...`
 
 Bu klasörler ve `trainer_state.json` dosyaları denetim sırasında bulunamadı. Yalnızca model cache'inde base Whisper modelleri doğrulanmıştır; LoRA adapteri doğrulanmamıştır.
 
@@ -205,7 +205,7 @@ Tamamlandı olarak kaydedilen koşular:
 - MediaSpeech TR test.
 - General hızlı test.
 - External TR 360 test: FLEURS TR, Khan Academy TR ve Khan Academy matematik alt kümeleri.
-- Kullanıcının `C:\Users\emre\Desktop\test.mp3` ses kaydı üzerinde inference.
+- Kullanıcının `%USERPROFILE%\Desktop\test.mp3` ses kaydı üzerinde inference.
 
 ### A1: MediaSpeech-only LoRA, 1 epoch
 
@@ -294,13 +294,13 @@ Bu dosyaların geçmiş içerikleri önceki çalışma kaydında özetlenmiş ol
 
 Öncelikli olarak korunması gereken mevcut kod:
 
-- `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\metrics.py`
-- `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\repeat_safe.py`
-- `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\segmentation.py`
-- `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\routing.py`
-- `C:\Users\emre\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\experiments.py`
-- `C:\whisper-asr-prototype\eval.py`
-- `C:\whisper-asr-prototype\inference.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\metrics.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\repeat_safe.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\segmentation.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\routing.py`
+- `%USERPROFILE%\Documents\Codex\2026-07-22\read-the-attached-emre-aslan-codex\work\overhaul-repos\whisper-turkish-domain-adaptation\whisper_adaptation\experiments.py`
+- `<legacy-prototype-root>\eval.py`
+- `<legacy-prototype-root>\inference.py`
 
 Geçmişte kullanılan ancak artık fiziksel olarak bulunmayan scriptlerin mantığı da yeniden kurulabilir: manifest üretimi, Türkçe normalizasyon, base/LoRA karşılaştırması, VAD, uzun ses chunking, repeat-safe decoding ve group-by domain metric raporlaması.
 
@@ -320,7 +320,7 @@ Mevcut kanıta göre aşağıdaki koşullar aynı biçimde tekrar çalıştırı
 
 Yeni deney başlatılacağı zaman önce şu arşivleme adımları tamamlanmalıdır:
 
-1. `C:\Users\emre\Documents\Whisper ARGE` altında `src`, `data`, `models`, `outputs`, `docs` ve `configs` klasörlerini oluşturmak.
+1. `%USERPROFILE%\Documents\Whisper ARGE` altında `src`, `data`, `models`, `outputs`, `docs` ve `configs` klasörlerini oluşturmak.
 2. Python sürümünü, CUDA/PyTorch sürümünü ve tam `pip freeze` çıktısını kilitlemek.
 3. Her manifesti veri seti revision'ı, lisans, split, satır sayısı, toplam süre ve SHA-256 ile arşivlemek.
 4. Base model ve her adapter için model config, tokenizer/processor, training args ve checkpoint trainer state dosyalarını saklamak.

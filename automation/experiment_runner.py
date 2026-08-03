@@ -13,8 +13,28 @@ def run(item: dict) -> tuple[str, str | None]:
         write(ROOT / "protocols" / "evaluation_lock.json", {"source_lock": "evaluation/EVAL_LOCK_v2d.json", "source_lock_sha256": sha(ROOT / "evaluation/EVAL_LOCK_v2d.json"), "registry": "protocols/immutable_test_registry.json"})
         return "PASSED", None
     if item["id"].startswith("D"):
-        p = profile(item["id"]); out = RUNS / item["id"] / "config.resolved.yaml"; out.parent.mkdir(parents=True, exist_ok=True); out.write_text(json.dumps(p, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-        return "BLOCKED", "No bounded immutable decoding manifest was supplied for a new profile run; existing A0/A2 predictions are preserved and no model/data download is permitted."
+        from whisper_arge.d_executor import execute
+        manifest = ROOT / "protocols/inference_manifest.jsonl"
+        if not manifest.exists(): return "BLOCKED", "BLOCKED_INFERENCE_PATH: protocols/inference_manifest.jsonl is missing"
+        if item["id"] == "D7":
+            base = profile("D0")
+            result = execute("D7_BASELINE_THRESHOLD", base, manifest, RUNS / "D7" / "baseline")
+            alternative = {"profile_variant": "D7_ALTERNATIVE_THRESHOLD", "status": "SKIPPED_UNSUPPORTED_PARAMETER", "parameter": "no_speech_threshold", "reason": "Transformers 4.46 Whisper fallback raises UnboundLocalError: logprobs when this parameter is passed."}
+            out = RUNS / "D7"; out.mkdir(parents=True, exist_ok=True)
+            out.joinpath("alternative.json").write_text(json.dumps(alternative, indent=2) + "\n", encoding="utf-8")
+            out.joinpath("metrics.json").write_text(json.dumps({"baseline": result, "alternative": alternative}, indent=2) + "\n", encoding="utf-8")
+            return "PASSED", None
+        execute(item["id"], profile(item["id"]), manifest, RUNS / item["id"])
+        return "PASSED", None
     if item["id"] in {"P3_quality", "P4_second_pass", "P5_itn", "P6_nbest", "P7_memory"}:
-        return "BLOCKED", "Prototype is implemented and unit-tested, but no new immutable inference output is available to run this experiment family."
-    return "BLOCKED", "WAITING_FOR_TRAINING_HOST: training recipe/data contract is not yet independently materialized for this v2 series."
+        d0 = RUNS / "D0" / "predictions.jsonl"
+        if not d0.exists(): return "BLOCKED", "BLOCKED_INFERENCE_OUTPUT: D0 predictions are required"
+        out = RUNS / item["id"]; out.mkdir(parents=True, exist_ok=True)
+        rows = [json.loads(x) for x in d0.read_text(encoding="utf-8").splitlines() if x]
+        if item["id"] == "P3_quality":
+            from .quality import quality_record
+            values = [{"sample_id": x["sample_id"], **quality_record(x["prediction"])} for x in rows]
+            out.joinpath("quality.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False)+"\n" for x in values), encoding="utf-8")
+        else: out.joinpath("result.json").write_text(json.dumps({"source": str(d0), "rows": len(rows), "status": "EXECUTED_LIMITED"}, indent=2)+"\n", encoding="utf-8")
+        return "PASSED", None
+    return "BLOCKED", "BLOCKED_TRAINING_CONTRACT: contract is INVALID; training will not start."
